@@ -4,33 +4,30 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Catalogue</title>
+<title>TORINO NICHE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Karla:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bois-nuit:#160F0A;
-  --bois:#211609;
-  --bois-clair:#2E2013;
+  --chene-fonce:#2E2318;
+  --chene:#3A2D20;
+  --chene-clair:#4A3A29;
   --terre:#A8481F;
   --terre-vive:#C96A3C;
-  --argile:#E0C2A6;
-  --creme:#F3E6D8;
-  --creme-doux:rgba(243,230,216,.62);
-  --trait:rgba(224,194,166,.18);
+  --argile:#E3C9AE;
+  --creme:#F5EADF;
+  --creme-doux:rgba(245,234,223,.66);
+  --trait:rgba(227,201,174,.20);
   --rouge:#C0392B;
-  --ok:#6E8F5B;
   --r:4px;
   --max:1180px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  background:var(--bois-nuit);
-  color:var(--creme);
-  font-family:'Karla',system-ui,sans-serif;
-  font-size:16px;line-height:1.6;
+  background:var(--chene-fonce);color:var(--creme);
+  font-family:'Karla',system-ui,sans-serif;font-size:16px;line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
 h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:400;line-height:1.1;letter-spacing:-.01em}
@@ -40,53 +37,22 @@ img{display:block;max-width:100%}
 :focus-visible{outline:2px solid var(--terre-vive);outline-offset:3px}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
-/* ---------- bandeau ---------- */
-.ticker{
-  background:var(--terre);color:#fff;font-size:13.5px;
-  text-align:center;padding:9px 16px;min-height:38px;
-  display:flex;align-items:center;justify-content:center;
-}
-.ticker span{transition:opacity .5s}
+.ticker{background:var(--terre);color:#fff;font-size:13.5px;text-align:center;padding:9px 16px;min-height:38px;display:flex;align-items:center;justify-content:center}
+.ticker span{transition:opacity .45s}
 
-/* ---------- entete ---------- */
-header{
-  position:sticky;top:0;z-index:90;
-  background:rgba(22,15,10,.93);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--trait);
-}
+header{position:sticky;top:0;z-index:90;background:rgba(46,35,24,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--trait)}
 .bar{display:flex;align-items:center;gap:28px;height:68px}
-.mark{font-family:'Fraunces',serif;font-size:23px;letter-spacing:.02em;white-space:nowrap}
+.mark{font-family:'Fraunces',serif;font-size:23px;letter-spacing:.02em;white-space:nowrap;cursor:pointer}
 .mark em{font-style:normal;color:var(--terre-vive)}
-nav{display:flex;gap:22px;margin-left:auto;font-size:14.5px}
-nav button{color:var(--creme-doux);padding:4px 0;border-bottom:1px solid transparent}
-nav button:hover{color:var(--creme);border-bottom-color:var(--terre-vive)}
-.panier-btn{
-  display:flex;align-items:center;gap:9px;
-  background:var(--terre);color:#fff;padding:10px 18px;border-radius:var(--r);
-  font-size:14.5px;font-weight:500;
-}
+nav{margin-left:auto}
+.nav-rdv{border:1px solid var(--argile);color:var(--argile);padding:9px 17px;border-radius:var(--r);font-size:14.5px}
+.nav-rdv:hover{background:var(--argile);color:var(--chene-fonce)}
+.panier-btn{display:flex;align-items:center;gap:9px;background:var(--terre);color:#fff;padding:10px 18px;border-radius:var(--r);font-size:14.5px;font-weight:500}
 .panier-btn:hover{background:var(--terre-vive)}
-.pastille{
-  background:#fff;color:var(--terre);border-radius:20px;
-  min-width:20px;height:20px;font-size:12px;font-weight:700;
-  display:inline-flex;align-items:center;justify-content:center;padding:0 5px;
-}
+.pastille{background:#fff;color:var(--terre);border-radius:20px;min-width:20px;height:20px;font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;padding:0 5px}
 
-/* ---------- hero ---------- */
-.hero{
-  position:relative;padding:74px 0 60px;
-  background:
-    linear-gradient(180deg,rgba(168,72,31,.10),transparent 60%),
-    var(--bois);
-  border-bottom:1px solid var(--trait);
-  overflow:hidden;
-}
-.hero:before{
-  content:"";position:absolute;inset:0;
-  background:repeating-linear-gradient(94deg,rgba(0,0,0,.22) 0 2px,transparent 2px 9px);
-  opacity:.5;pointer-events:none;
-}
+.hero{position:relative;padding:70px 0 58px;background:linear-gradient(180deg,rgba(168,72,31,.12),transparent 62%),var(--chene);border-bottom:1px solid var(--trait);overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(94deg,rgba(0,0,0,.16) 0 2px,transparent 2px 9px);opacity:.55;pointer-events:none}
 .hero .wrap{position:relative}
 .hero-grid{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:start}
 .filet{width:3px;background:linear-gradient(180deg,var(--terre-vive),transparent);border-radius:3px;align-self:stretch;min-height:150px}
@@ -94,108 +60,87 @@ nav button:hover{color:var(--creme);border-bottom-color:var(--terre-vive)}
 .hero h1 span{display:block;color:var(--argile);font-size:.42em;letter-spacing:.04em;margin-top:18px;font-family:'Karla',sans-serif}
 .hero p{margin-top:22px;max-width:46ch;color:var(--creme-doux);font-size:16.5px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.btn-fin{
-  border:1px solid var(--argile);color:var(--argile);
-  padding:11px 20px;border-radius:var(--r);font-size:14.5px;
-}
-.btn-fin:hover{background:var(--argile);color:var(--bois)}
+.btn-plein{background:var(--terre);color:#fff;padding:12px 22px;border-radius:var(--r);font-size:14.5px;font-weight:500}
+.btn-plein:hover{background:var(--terre-vive)}
+.btn-fin{border:1px solid var(--argile);color:var(--argile);padding:11px 20px;border-radius:var(--r);font-size:14.5px}
+.btn-fin:hover{background:var(--argile);color:var(--chene-fonce)}
 
-/* ---------- filtres ---------- */
-.outils{padding:38px 0 8px}
+.outils{padding:34px 0 6px}
 .ligne-outils{display:flex;gap:12px;align-items:stretch;flex-wrap:wrap}
 .recherche{position:relative;flex:1;min-width:240px;max-width:520px}
+.recherche input{width:100%;background:var(--chene);border:1px solid var(--trait);color:var(--creme);padding:14px 16px 14px 44px;border-radius:var(--r);font-size:15px}
+.recherche input::placeholder{color:rgba(245,234,223,.45)}
+.recherche svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);opacity:.45}
 .bloc-code{display:flex;gap:8px}
-.bloc-code input{
-  width:130px;background:var(--bois-clair);border:1px solid var(--trait);
-  color:var(--creme);padding:14px 14px;border-radius:var(--r);font-size:15px;font-family:inherit;
-}
-.bloc-code input::placeholder{color:rgba(243,230,216,.42)}
-.bloc-code button{
-  border:1px solid var(--argile);color:var(--argile);
-  padding:0 18px;border-radius:var(--r);font-size:14.5px;white-space:nowrap;
-}
-.bloc-code button:hover{background:var(--argile);color:var(--bois)}
-.code-actif{
-  margin-top:12px;font-size:13.5px;color:var(--argile);
-  background:rgba(168,72,31,.14);border-left:2px solid var(--terre);
-  padding:9px 13px;border-radius:3px;
-}
+.bloc-code input{width:130px;background:var(--chene);border:1px solid var(--trait);color:var(--creme);padding:14px;border-radius:var(--r);font-size:15px;font-family:inherit}
+.bloc-code input::placeholder{color:rgba(245,234,223,.45)}
+.bloc-code button{border:1px solid var(--argile);color:var(--argile);padding:0 18px;border-radius:var(--r);font-size:14.5px;white-space:nowrap}
+.bloc-code button:hover{background:var(--argile);color:var(--chene-fonce)}
+.code-actif{margin-top:12px;font-size:13.5px;color:var(--argile);background:rgba(168,72,31,.16);border-left:2px solid var(--terre);padding:9px 13px;border-radius:3px}
 .code-actif button{text-decoration:underline;font-size:13px;color:var(--creme-doux);margin-left:8px}
 .code-actif button:hover{color:var(--creme)}
-.recherche input{
-  width:100%;background:var(--bois-clair);border:1px solid var(--trait);
-  color:var(--creme);padding:14px 16px 14px 44px;border-radius:var(--r);font-size:15px;
-}
-.recherche input::placeholder{color:rgba(243,230,216,.42)}
-.recherche svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);opacity:.45}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.chip{
-  border:1px solid var(--trait);color:var(--creme-doux);
-  padding:7px 14px;border-radius:20px;font-size:13.5px;
-}
-.chip:hover{border-color:var(--argile);color:var(--creme)}
-.chip.on{background:var(--terre);border-color:var(--terre);color:#fff}
-.compte{margin-top:20px;font-size:13.5px;color:var(--creme-doux)}
 
-/* ---------- grille ---------- */
-.grille{
-  display:grid;gap:22px;padding:26px 0 70px;
-  grid-template-columns:repeat(auto-fill,minmax(232px,1fr));
-}
-.carte{
-  background:var(--bois);border:1px solid var(--trait);border-radius:var(--r);
-  display:flex;flex-direction:column;overflow:hidden;
-}
-.visuel{
-  position:relative;aspect-ratio:3/4;background:var(--bois-clair);
-  display:flex;align-items:center;justify-content:center;overflow:hidden;
-}
+.section{padding:44px 0 0}
+.section-tete{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:20px}
+.section-tete h2{font-size:clamp(24px,3.4vw,32px)}
+.section-tete a{font-size:13.5px;color:var(--creme-doux);border-bottom:1px solid transparent}
+.section-tete a:hover{color:var(--creme);border-bottom-color:var(--terre-vive)}
+.rang{display:grid;gap:20px;grid-template-columns:repeat(4,1fr)}
+.grille{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));padding:24px 0 0}
+
+.carte{background:var(--chene);border:1px solid var(--trait);border-radius:var(--r);display:flex;flex-direction:column;overflow:hidden}
+.visuel{position:relative;aspect-ratio:3/4;background:var(--chene-clair);display:flex;align-items:center;justify-content:center;overflow:hidden}
 .visuel img{width:100%;height:100%;object-fit:cover}
-.mono{font-family:'Fraunces',serif;font-size:52px;color:rgba(224,194,166,.22)}
-.etiq{
-  position:absolute;top:10px;left:10px;
-  background:var(--terre);color:#fff;font-size:11px;font-weight:700;
-  padding:4px 9px;border-radius:3px;letter-spacing:.03em;
-}
-.epuise{
-  position:absolute;inset:0;background:rgba(22,15,10,.74);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--argile);font-size:14px;
-}
+.mono{font-family:'Fraunces',serif;font-size:52px;color:rgba(227,201,174,.24)}
+.etiq{position:absolute;top:10px;left:10px;color:#fff;font-size:10.5px;font-weight:700;padding:4px 9px;border-radius:3px;letter-spacing:.04em}
+.etiq.bs{background:var(--rouge)}
+.etiq.nv{background:var(--terre)}
+.etiq.dp{background:#241a11}
+.epuise{position:absolute;inset:0;background:rgba(46,35,24,.76);display:flex;align-items:center;justify-content:center;color:var(--argile);font-size:14px}
 .infos{padding:15px 15px 17px;display:flex;flex-direction:column;flex:1;gap:5px}
 .maison{font-size:12.5px;color:var(--terre-vive);letter-spacing:.04em}
 .titre{font-family:'Fraunces',serif;font-size:19px;line-height:1.25}
 .detail{font-size:13px;color:var(--creme-doux)}
-.prix{margin-top:auto;padding-top:12px;display:flex;align-items:baseline;gap:9px}
+.blister{font-size:11.5px;color:var(--argile);border:1px solid var(--trait);border-radius:20px;padding:2px 9px;align-self:flex-start;margin-top:2px}
+.prix{margin-top:auto;padding-top:12px;display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
 .prix b{font-size:20px;font-weight:500;font-family:'Fraunces',serif}
 .barre{color:var(--rouge);text-decoration:line-through;font-size:13.5px}
-.ajout{
-  margin-top:12px;background:var(--terre);color:#fff;
-  padding:10px;border-radius:var(--r);font-size:14px;font-weight:500;width:100%;
-}
+.ajout{margin-top:12px;background:var(--terre);color:#fff;padding:10px;border-radius:var(--r);font-size:14px;font-weight:500;width:100%}
 .ajout:hover{background:var(--terre-vive)}
-.ajout[disabled]{background:var(--bois-clair);color:var(--creme-doux);cursor:not-allowed}
+.ajout[disabled]{background:var(--chene-clair);color:var(--creme-doux);cursor:not-allowed}
 
-.vide{padding:60px 20px;text-align:center;border:1px dashed var(--trait);border-radius:var(--r);grid-column:1/-1}
+/* maisons */
+.maisons{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));padding-top:4px}
+.maison-carte{background:var(--chene);border:1px solid var(--trait);border-radius:var(--r);padding:22px 16px;text-align:center;transition:border-color .2s}
+.maison-carte:hover{border-color:var(--argile)}
+.maison-logo{height:62px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.maison-logo img{max-height:62px;max-width:100%;object-fit:contain}
+.maison-logo .init{font-family:'Fraunces',serif;font-size:30px;color:var(--argile);letter-spacing:.06em}
+.maison-nom{font-family:'Fraunces',serif;font-size:17px;line-height:1.2}
+.maison-nb{font-size:12.5px;color:var(--creme-doux);margin-top:5px}
+
+.retour{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--creme-doux);margin-bottom:18px}
+.retour:hover{color:var(--creme)}
+.cat-tete{padding-top:34px}
+.cat-tete h2{font-size:clamp(26px,4vw,38px)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{border:1px solid var(--trait);color:var(--creme-doux);padding:7px 14px;border-radius:20px;font-size:13.5px}
+.chip:hover{border-color:var(--argile);color:var(--creme)}
+.chip.on{background:var(--terre);border-color:var(--terre);color:#fff}
+.compte{margin-top:16px;font-size:13.5px;color:var(--creme-doux)}
+
+.vide{padding:56px 20px;text-align:center;border:1px dashed var(--trait);border-radius:var(--r);grid-column:1/-1}
 .vide h3{font-size:22px;margin-bottom:10px}
 .vide p{color:var(--creme-doux);max-width:44ch;margin:0 auto 20px}
-
-.mention{
-  grid-column:1/-1;background:var(--bois);border-left:2px solid var(--terre);
-  padding:18px 20px;border-radius:var(--r);
-}
+.mention{grid-column:1/-1;background:var(--chene);border-left:2px solid var(--terre);padding:18px 20px;border-radius:var(--r)}
 .mention p{font-size:14.5px;color:var(--argile)}
-.mention small{display:block;margin-top:8px;font-size:11.5px;color:rgba(243,230,216,.45);line-height:1.5}
+.mention small{display:block;margin-top:8px;font-size:11.5px;color:rgba(245,234,223,.48);line-height:1.5}
+.charge{text-align:center;padding:70px 0;color:var(--creme-doux)}
 
-/* ---------- panier ---------- */
-.voile{position:fixed;inset:0;background:rgba(10,6,3,.62);z-index:98;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s,visibility .25s}
+/* panier */
+.voile{position:fixed;inset:0;background:rgba(16,11,6,.66);z-index:98;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s,visibility .25s}
 .voile.on{opacity:1;visibility:visible;pointer-events:auto}
-.tiroir{
-  position:fixed;top:0;right:0;bottom:0;width:min(430px,100%);
-  background:var(--bois);border-left:1px solid var(--trait);z-index:99;
-  transform:translateX(102%);transition:transform .3s cubic-bezier(.4,0,.2,1);
-  display:flex;flex-direction:column;
-}
+.tiroir{position:fixed;top:0;right:0;bottom:0;width:min(430px,100%);background:var(--chene);border-left:1px solid var(--trait);z-index:99;transform:translateX(102%);transition:transform .3s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column}
 .tiroir.on{transform:none}
 .tiroir-tete{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid var(--trait)}
 .tiroir-tete h2{font-size:22px}
@@ -203,7 +148,7 @@ nav button:hover{color:var(--creme);border-bottom-color:var(--terre-vive)}
 .fermer:hover{color:var(--creme)}
 .tiroir-corps{flex:1;overflow-y:auto;padding:20px 22px}
 .ligne{display:flex;gap:13px;padding:14px 0;border-bottom:1px solid var(--trait)}
-.ligne img,.ligne .ph{width:58px;height:74px;object-fit:cover;border-radius:3px;background:var(--bois-clair);flex:none}
+.ligne img,.ligne .ph{width:58px;height:74px;object-fit:cover;border-radius:3px;background:var(--chene-clair);flex:none}
 .ligne-txt{flex:1;min-width:0}
 .ligne-txt .n{font-family:'Fraunces',serif;font-size:16px}
 .ligne-txt .m{font-size:12.5px;color:var(--creme-doux)}
@@ -214,112 +159,95 @@ nav button:hover{color:var(--creme);border-bottom-color:var(--terre-vive)}
 .retirer{font-size:12.5px;color:var(--creme-doux);text-decoration:underline;margin-left:auto;align-self:flex-start}
 .retirer:hover{color:var(--rouge)}
 .panier-vide{text-align:center;padding:50px 10px;color:var(--creme-doux)}
+.vers-rdv{margin-top:20px;border:1px solid var(--trait);border-radius:var(--r);padding:14px;text-align:left;width:100%;font-size:13.5px;color:var(--creme-doux);line-height:1.4}
+.vers-rdv:hover{border-color:var(--argile)}
+.vers-rdv b{display:block;font-weight:500;font-size:14.5px;color:var(--creme);margin-bottom:3px}
+.tiroir-pied{border-top:1px solid var(--trait);padding:18px 22px}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.total span{font-size:14px;color:var(--creme-doux)}
+.total b{font-family:'Fraunces',serif;font-size:25px;font-weight:400}
+.cgv{font-size:11.5px;color:rgba(245,234,223,.52);line-height:1.5;margin-bottom:14px}
+.valider{width:100%;background:var(--terre);color:#fff;padding:15px;border-radius:var(--r);font-size:15.5px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:10px}
+.valider:hover{background:var(--terre-vive)}
+.valider[disabled]{background:var(--chene-clair);color:var(--creme-doux);cursor:not-allowed}
 
-.modes{display:flex;gap:8px;margin:20px 0 4px}
-.mode{
-  flex:1;border:1px solid var(--trait);border-radius:var(--r);
-  padding:12px 10px;text-align:center;font-size:13.5px;color:var(--creme-doux);line-height:1.35;
-}
-.mode:hover{border-color:var(--argile)}
-.mode.on{border-color:var(--terre);background:rgba(168,72,31,.16);color:var(--creme)}
-.mode b{display:block;font-weight:500;font-size:14.5px;color:var(--creme)}
+/* page rendez-vous */
+.page{position:fixed;inset:0;z-index:105;display:none;align-items:flex-start;justify-content:center;padding:36px 20px;overflow-y:auto;background:rgba(16,11,6,.8)}
+.page.on{display:flex}
+.page-boite{background:var(--chene);border:1px solid var(--trait);border-radius:var(--r);max-width:600px;width:100%;padding:30px}
+.page-tete{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:18px}
+.page-tete h2{font-size:29px}
+.page-sous{font-size:14px;color:var(--creme-doux);margin-top:5px}
+.regle{font-size:13.5px;color:var(--argile);background:rgba(168,72,31,.16);border-radius:3px;padding:11px 13px;line-height:1.5}
+.etape{margin:22px 0}
+.etape h3{font-family:'Karla',sans-serif;font-size:13px;font-weight:700;color:var(--terre-vive);margin-bottom:10px}
+.etape input{width:100%;background:var(--chene-clair);border:1px solid var(--trait);color:var(--creme);padding:12px 13px;border-radius:var(--r);font-size:15px;font-family:inherit}
+.etape input::placeholder{color:rgba(245,234,223,.45)}
+.rdv-item{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--trait);font-size:14.5px}
+.rdv-item:last-of-type{border-bottom:none}
+.rdv-item span{color:var(--creme-doux)}
+.rdv-total{display:flex;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1px solid var(--trait)}
+.rdv-total b{font-family:'Fraunces',serif;font-size:21px;font-weight:400}
+.rdv-manque{border:1px dashed var(--trait);border-radius:var(--r);padding:18px;text-align:center;font-size:14.5px;color:var(--creme-doux)}
+.rdv-manque button{color:var(--terre-vive);text-decoration:underline;margin-top:8px;display:block;width:100%}
 
-.rdv{margin-top:16px;border:1px solid var(--trait);border-radius:var(--r);padding:16px}
-.rdv h3{font-size:17px;margin-bottom:6px}
-.rdv .regle{font-size:13px;color:var(--argile);background:rgba(168,72,31,.14);border-radius:3px;padding:9px 11px;margin-bottom:14px;line-height:1.5}
-.champ{margin-bottom:13px}
-.champ label{display:block;font-size:13px;color:var(--creme-doux);margin-bottom:6px}
-.champ input,.champ select{
-  width:100%;background:var(--bois-clair);border:1px solid var(--trait);
-  color:var(--creme);padding:11px 12px;border-radius:var(--r);font-size:14.5px;font-family:inherit;
-}
-.cal{border:1px solid var(--trait);border-radius:var(--r);padding:12px;margin-bottom:13px}
+.cal{border:1px solid var(--trait);border-radius:var(--r);padding:12px}
 .cal-tete{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
 .cal-tete span{font-size:14.5px}
 .cal-tete button{width:28px;height:28px;border:1px solid var(--trait);border-radius:3px;color:var(--creme-doux);font-size:16px;line-height:1}
 .cal-tete button:hover:not([disabled]){border-color:var(--argile);color:var(--creme)}
 .cal-tete button[disabled]{opacity:.25;cursor:not-allowed}
 .cal-jours,.cal-grille{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
-.cal-jours span{text-align:center;font-size:11px;color:rgba(243,230,216,.45);padding-bottom:4px}
-.cal-grille button{
-  aspect-ratio:1;border:1px solid transparent;border-radius:3px;
-  font-size:13.5px;color:var(--creme);display:flex;align-items:center;justify-content:center;
-}
+.cal-jours span{text-align:center;font-size:11px;color:rgba(245,234,223,.48);padding-bottom:4px}
+.cal-grille button{aspect-ratio:1;border:1px solid transparent;border-radius:3px;font-size:13.5px;color:var(--creme);display:flex;align-items:center;justify-content:center}
 .cal-grille button:hover:not([disabled]){border-color:var(--argile)}
 .cal-grille button.on{background:var(--terre);color:#fff}
-.cal-grille button[disabled]{color:rgba(243,230,216,.22);cursor:not-allowed}
-.creneaux{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:7px;max-height:168px;overflow-y:auto}
+.cal-grille button[disabled]{color:rgba(245,234,223,.24);cursor:not-allowed}
+.creneaux{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:7px;max-height:180px;overflow-y:auto}
 .creneau{border:1px solid var(--trait);border-radius:3px;padding:8px 4px;font-size:13.5px;color:var(--creme-doux);text-align:center}
 .creneau:hover{border-color:var(--argile);color:var(--creme)}
 .creneau.on{background:var(--terre);border-color:var(--terre);color:#fff}
-.creneau[disabled]{opacity:.28;cursor:not-allowed}
+.creneau[disabled]{opacity:.3;cursor:not-allowed}
 
-.tiroir-pied{border-top:1px solid var(--trait);padding:18px 22px}
-.total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
-.total span{font-size:14px;color:var(--creme-doux)}
-.total b{font-family:'Fraunces',serif;font-size:25px;font-weight:400}
-.cgv{font-size:11.5px;color:rgba(243,230,216,.5);line-height:1.5;margin-bottom:14px}
-.valider{
-  width:100%;background:var(--terre);color:#fff;padding:15px;
-  border-radius:var(--r);font-size:15.5px;font-weight:500;
-  display:flex;align-items:center;justify-content:center;gap:10px;
-}
-.valider:hover{background:var(--terre-vive)}
-.valider[disabled]{background:var(--bois-clair);color:var(--creme-doux);cursor:not-allowed}
-
-/* ---------- pages info ---------- */
-.fiche{
-  position:fixed;inset:0;z-index:100;display:none;
-  align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto;
-  background:rgba(10,6,3,.72);
-}
+.fiche{position:fixed;inset:0;z-index:100;display:none;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto;background:rgba(16,11,6,.75)}
 .fiche.on{display:flex}
-.fiche-boite{
-  background:var(--bois);border:1px solid var(--trait);border-radius:var(--r);
-  max-width:640px;width:100%;padding:34px;
-}
+.fiche-boite{background:var(--chene);border:1px solid var(--trait);border-radius:var(--r);max-width:640px;width:100%;padding:34px}
 .fiche-boite h2{font-size:27px;margin-bottom:18px}
 .fiche-boite h3{font-family:'Karla',sans-serif;font-size:14px;font-weight:700;color:var(--terre-vive);margin:20px 0 7px}
 .fiche-boite p{font-size:15px;color:var(--creme-doux);margin-bottom:9px}
-.fiche-boite ul{margin:0 0 9px 18px;font-size:15px;color:var(--creme-doux)}
 
-/* ---------- pied ---------- */
-footer{background:var(--bois);border-top:1px solid var(--trait);padding:52px 0 26px}
+footer{background:var(--chene);border-top:1px solid var(--trait);padding:52px 0 26px;margin-top:70px}
 .pied{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:34px}
 .pied h4{font-family:'Karla',sans-serif;font-size:13px;font-weight:700;color:var(--terre-vive);margin-bottom:12px}
 .pied a,.pied p{display:block;font-size:14px;color:var(--creme-doux);margin-bottom:8px}
 .pied a:hover{color:var(--creme)}
 .pied-mark{font-family:'Fraunces',serif;font-size:22px;color:var(--creme);margin-bottom:10px}
-.pied-bas{margin-top:38px;padding-top:18px;border-top:1px solid var(--trait);font-size:12.5px;color:rgba(243,230,216,.42)}
+.pied-bas{margin-top:38px;padding-top:18px;border-top:1px solid var(--trait);font-size:12.5px;color:rgba(245,234,223,.45)}
 
-/* ---------- notif ---------- */
-.notif{
-  position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);
-  background:var(--bois-clair);border:1px solid var(--terre);color:var(--creme);
-  padding:13px 20px;border-radius:var(--r);font-size:14px;z-index:120;
-  opacity:0;visibility:hidden;transition:all .25s;max-width:calc(100% - 32px);text-align:center;
-}
+.notif{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:var(--chene-clair);border:1px solid var(--terre);color:var(--creme);padding:13px 20px;border-radius:var(--r);font-size:14px;z-index:120;opacity:0;visibility:hidden;transition:all .25s;max-width:calc(100% - 32px);text-align:center}
 .notif.on{opacity:1;visibility:visible;transform:translate(-50%,0)}
 
-.charge{grid-column:1/-1;text-align:center;padding:70px 0;color:var(--creme-doux)}
-
+@media(max-width:900px){
+  .rang{grid-template-columns:repeat(2,1fr)}
+}
 @media(max-width:760px){
-  nav{display:none}
-  .bar{gap:14px}
-  .panier-btn{margin-left:auto;padding:9px 14px}
-  .hero{padding:52px 0 44px}
+  .bar{gap:12px}
+  .nav-rdv{padding:9px 12px;font-size:13.5px}
+  .panier-btn{padding:9px 14px}
+  .hero{padding:50px 0 42px}
   .hero-grid{grid-template-columns:1fr;gap:20px}
   .filet{width:100%;height:3px;min-height:0;background:linear-gradient(90deg,var(--terre-vive),transparent)}
-  .grille{grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:14px}
+  .rang,.grille{gap:14px}
+  .grille{grid-template-columns:repeat(2,1fr)}
+  .maisons{grid-template-columns:repeat(2,1fr);gap:12px}
+  .maison-logo{height:48px}
+  .maison-logo img{max-height:48px}
   .titre{font-size:16.5px}
   .pied{grid-template-columns:1fr;gap:26px}
-  .fiche{padding:16px}
-  .fiche-boite{padding:24px}
+  .fiche,.page{padding:16px}
+  .fiche-boite,.page-boite{padding:24px}
 }
-@media(prefers-reduced-motion:reduce){
-  *{transition:none!important;animation:none!important}
-  html{scroll-behavior:auto}
-}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -328,15 +256,9 @@ footer{background:var(--bois);border-top:1px solid var(--trait);padding:52px 0 2
 
 <header>
   <div class="wrap bar">
-    <div class="mark" id="mark">Maison <em>Parfums</em></div>
-    <nav>
-      <button data-fiche="showroom">Le showroom</button>
-      <button data-fiche="livraison">Livraison</button>
-      <button data-fiche="cgv">Conditions</button>
-    </nav>
-    <button class="panier-btn" id="ouvrir-panier">
-      Panier <span class="pastille" id="pastille">0</span>
-    </button>
+    <div class="mark" id="mark">TORINO <em>NICHE</em></div>
+    <nav><button class="nav-rdv" data-ouvrir-rdv>Prendre rendez-vous</button></nav>
+    <button class="panier-btn" id="ouvrir-panier">Panier <span class="pastille" id="pastille">0</span></button>
   </div>
 </header>
 
@@ -347,8 +269,8 @@ footer{background:var(--bois);border-top:1px solid var(--trait);padding:52px 0 2
       <h1>Le parfum se choisit au nez<span>Catalogue privé, Strasbourg</span></h1>
       <p>Une sélection de parfums de niche disponible à la commande, ou à découvrir sur place au showroom, sur rendez-vous, tous les jours de 10h à 22h.</p>
       <div class="hero-actions">
+        <button class="btn-plein" data-ouvrir-rdv>Prendre rendez-vous</button>
         <button class="btn-fin" data-fiche="showroom">Comment se passe une visite</button>
-        <button class="btn-fin" data-fiche="livraison">Livraison</button>
       </div>
     </div>
   </div>
@@ -359,7 +281,7 @@ footer{background:var(--bois);border-top:1px solid var(--trait);padding:52px 0 2
     <div class="ligne-outils">
       <div class="recherche">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-        <input type="search" id="q" placeholder="Recherchez votre parfum" autocomplete="off">
+        <input type="search" id="q" placeholder="Recherchez un parfum ou une maison" autocomplete="off">
       </div>
       <div class="bloc-code" id="bloc-code">
         <input type="text" id="code" placeholder="Code" autocomplete="off" spellcheck="false">
@@ -370,12 +292,27 @@ footer{background:var(--bois);border-top:1px solid var(--trait);padding:52px 0 2
       Tarifs catalogue débloqués.
       <button id="retirer-code">Retirer</button>
     </div>
-    <div class="chips" id="chips-genre"></div>
-    <div class="chips" id="chips-maison"></div>
-    <div class="compte" id="compte"></div>
   </div>
-  <div class="grille" id="grille">
-    <div class="charge">Chargement du catalogue…</div>
+
+  <div id="chargement" class="charge">Chargement du catalogue…</div>
+
+  <div id="vue-accueil" style="display:none">
+    <div id="rubriques"></div>
+    <section class="section">
+      <div class="section-tete"><h2>Les maisons</h2></div>
+      <div class="maisons" id="grille-maisons"></div>
+    </section>
+  </div>
+
+  <div id="vue-catalogue" style="display:none">
+    <div class="cat-tete">
+      <button class="retour" id="retour">&lsaquo; Retour aux maisons</button>
+      <h2 id="cat-titre">Catalogue</h2>
+      <div class="chips" id="chips-famille"></div>
+      <div class="chips" id="chips-genre"></div>
+      <div class="compte" id="compte"></div>
+    </div>
+    <div class="grille" id="grille"></div>
   </div>
 </main>
 
@@ -383,7 +320,7 @@ footer{background:var(--bois);border-top:1px solid var(--trait);padding:52px 0 2
   <div class="wrap">
     <div class="pied">
       <div>
-        <div class="pied-mark" id="mark-pied">Maison Parfums</div>
+        <div class="pied-mark">TORINO NICHE</div>
         <p>Parfums de niche, showroom privé à Strasbourg sur rendez-vous.</p>
       </div>
       <div>
@@ -394,7 +331,7 @@ footer{background:var(--bois);border-top:1px solid var(--trait);padding:52px 0 2
       </div>
       <div>
         <h4>Showroom</h4>
-        <a href="#" data-fiche="showroom">Prendre rendez-vous</a>
+        <a href="#" data-ouvrir-rdv>Prendre rendez-vous</a>
         <p>Strasbourg, adresse communiquée après confirmation</p>
         <p>Tous les jours, 10h – 22h</p>
       </div>
@@ -413,48 +350,62 @@ footer{background:var(--bois);border-top:1px solid var(--trait);padding:52px 0 2
   <div class="tiroir-corps">
     <div id="panier-vide" class="panier-vide">Votre sélection est vide.<br>Ajoutez un parfum pour commander ou réserver une visite.</div>
     <div id="panier-lignes"></div>
-
-    <div id="bloc-mode" style="display:none">
-      <div class="modes">
-        <button class="mode on" data-mode="livraison"><b>Livraison</b>Expédition à domicile</button>
-        <button class="mode" data-mode="rdv"><b>Showroom</b>Strasbourg, sur rendez-vous</button>
-      </div>
-
-      <div class="rdv" id="bloc-rdv" style="display:none">
-        <h3>Votre créneau</h3>
-        <div class="regle">La visite est une prestation d'accompagnement : elle se conclut par l'achat d'au moins un parfum. Votre sélection ci-dessus sert de base au rendez-vous.</div>
-        <div class="champ">
-          <label for="rdv-nom">Prénom et nom</label>
-          <input type="text" id="rdv-nom" placeholder="Pour vous accueillir" autocomplete="name">
-        </div>
-        <div class="champ">
-          <label>Jour</label>
-          <div class="cal">
-            <div class="cal-tete">
-              <button id="cal-prev" aria-label="Mois précédent">&lsaquo;</button>
-              <span id="cal-mois"></span>
-              <button id="cal-next" aria-label="Mois suivant">&rsaquo;</button>
-            </div>
-            <div class="cal-jours"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
-            <div class="cal-grille" id="cal-grille"></div>
-          </div>
-        </div>
-        <div class="champ">
-          <label>Heure</label>
-          <div class="creneaux" id="creneaux"></div>
-        </div>
-      </div>
-    </div>
+    <button class="vers-rdv" id="vers-rdv" data-ouvrir-rdv style="display:none">
+      <b>Venir au showroom plutôt qu'une livraison</b>
+      Strasbourg, sur rendez-vous, avec ces parfums
+    </button>
   </div>
   <div class="tiroir-pied">
     <div class="total"><span>Total</span><b id="total">0 €</b></div>
     <p class="cgv">Droits de douane et taxes inclus. En validant, vous acceptez les conditions de vente.</p>
     <button class="valider" id="valider" disabled>
       <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1112 20zm4.4-5.8c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.7.9-.3.2-.5 0a6.5 6.5 0 01-1.9-1.2 7.3 7.3 0 01-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 00-.7.3A2.8 2.8 0 006 9.9a4.8 4.8 0 001 2.5 11 11 0 004.2 3.7 12 12 0 001.4.5 3.4 3.4 0 001.6.1 2.6 2.6 0 001.7-1.2 2.1 2.1 0 00.1-1.2z"/></svg>
-      <span id="valider-txt">Commander sur WhatsApp</span>
+      Commander sur WhatsApp
     </button>
   </div>
 </aside>
+
+<div class="page" id="page-rdv">
+  <div class="page-boite">
+    <div class="page-tete">
+      <div>
+        <h2>Prendre rendez-vous</h2>
+        <p class="page-sous">Showroom privé à Strasbourg, tous les jours de 10h à 22h</p>
+      </div>
+      <button class="fermer" id="fermer-rdv" aria-label="Fermer">&times;</button>
+    </div>
+    <div class="regle">La visite est un accompagnement : on sent, on compare, et elle se conclut par l'achat d'au moins un parfum. Choisissez donc d'abord les parfums qui vous intéressent dans le catalogue.</div>
+    <div class="etape">
+      <h3>1. Vos parfums</h3>
+      <div id="rdv-selection"></div>
+    </div>
+    <div class="etape">
+      <h3>2. Le jour</h3>
+      <div class="cal">
+        <div class="cal-tete">
+          <button id="cal-prev" aria-label="Mois précédent">&lsaquo;</button>
+          <span id="cal-mois"></span>
+          <button id="cal-next" aria-label="Mois suivant">&rsaquo;</button>
+        </div>
+        <div class="cal-jours"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+        <div class="cal-grille" id="cal-grille"></div>
+      </div>
+    </div>
+    <div class="etape">
+      <h3>3. L'heure</h3>
+      <div class="creneaux" id="creneaux"></div>
+    </div>
+    <div class="etape">
+      <h3>4. Votre nom</h3>
+      <input type="text" id="rdv-nom" placeholder="Prénom et nom, pour vous accueillir" autocomplete="name">
+    </div>
+    <p class="cgv">Le créneau est une demande : elle est confirmée par le vendeur dans la conversation WhatsApp, avec l'adresse exacte du showroom.</p>
+    <button class="valider" id="envoyer-rdv" disabled>
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1112 20zm4.4-5.8c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.7.9-.3.2-.5 0a6.5 6.5 0 01-1.9-1.2 7.3 7.3 0 01-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 00-.7.3A2.8 2.8 0 006 9.9a4.8 4.8 0 001 2.5 11 11 0 004.2 3.7 12 12 0 001.4.5 3.4 3.4 0 001.6.1 2.6 2.6 0 001.7-1.2 2.1 2.1 0 00.1-1.2z"/></svg>
+      Envoyer la demande sur WhatsApp
+    </button>
+  </div>
+</div>
 
 <div class="fiche" id="fiche">
   <div class="fiche-boite">
@@ -467,15 +418,15 @@ footer{background:var(--bois);border-top:1px solid var(--trait);padding:52px 0 2
 
 <script>
 /* =======================================================================
-   À REMPLIR — les 4 seules lignes à modifier
+   À REMPLIR
    ======================================================================= */
 const CONFIG = {
   NOM_BOUTIQUE : 'TORINO NICHE',
   SHEET_ID     : '1-QqjwquYNvA3C9pyc7VH_wFxveMefuUAWNQCu-PzWf0',
-  SHEET_NAME   : 'Catalogue',        // nom exact de l'onglet en bas du Sheet
+  SHEET_NAME   : 'Catalogue',        // nom exact de l'onglet
   WA_NUMERO    : '33626736000',      // +33 6 26 73 60 00
   WA_SECOURS   : 'https://wa.me/message/P6HN77WSSKMEE1',
-  CODE_PROMO   : 'Torino67'          // débloque les tarifs catalogue
+  CODE_PROMO   : 'Torino67'
 };
 /* ===================================================================== */
 
@@ -485,38 +436,43 @@ const MSG_BANDEAU = [
   'Échantillons offerts pour l\'achat d\'un parfum',
   'Catalogue mis à jour chaque semaine'
 ];
+const RUBRIQUES = [
+  { cle:'star',      titre:'Best-sellers',           etiq:'Best-seller',    classe:'bs' },
+  { cle:'nouveau',   titre:'Nouvel arrivage',        etiq:'Nouveauté',      classe:'nv' },
+  { cle:'derniere',  titre:'Dernière pièce',         etiq:'Dernière pièce', classe:'dp' },
+  { cle:'recommande',titre:'La sélection du moment', etiq:'',               classe:'' }
+];
 
+let PRODUITS = [], PANIER = [], MAISONS = [];
+let VUE = 'accueil', MAISON_ACTIVE = '', GENRE = '', FAMILLE = '', RECHERCHE = '';
+let RDV = { date:'', heure:'' };
 let CODE_OK = false;
 try { CODE_OK = localStorage.getItem('torino_code') === '1'; } catch(e){}
-
-let PRODUITS = [], PANIER = [], MODE = 'livraison';
-let F = { q:'', genre:'', maison:'' };
-let RDV = { date:'', heure:'' };
 
 const $  = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const euro = n => (Math.round(n*100)/100).toLocaleString('fr-FR') + ' €';
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-document.title = CONFIG.NOM_BOUTIQUE;
-$('#mark').innerHTML = CONFIG.NOM_BOUTIQUE.replace(/\s(\S+)$/,' <em>$1</em>');
-$('#mark-pied').textContent = CONFIG.NOM_BOUTIQUE;
 $('#lien-wa-pied').href = CONFIG.WA_NUMERO ? 'https://wa.me/'+CONFIG.WA_NUMERO : CONFIG.WA_SECOURS;
+$('#mark').onclick = () => allerAccueil();
 
-/* ---------- bandeau tournant ---------- */
+/* ---------- bandeau ---------- */
 (function(){
-  let i = 0; const el = $('#ticker-txt');
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let i = 0;
+  const el = $('#ticker-txt');
+  const doux = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  el.textContent = MSG_BANDEAU[0];
   setInterval(() => {
-    el.style.opacity = 0;
-    setTimeout(() => { i = (i+1) % MSG_BANDEAU.length; el.textContent = MSG_BANDEAU[i]; el.style.opacity = 1; }, 500);
-  }, 5000);
+    const suivant = () => { i = (i+1) % MSG_BANDEAU.length; el.textContent = MSG_BANDEAU[i]; el.style.opacity = 1; };
+    if (doux){ el.style.opacity = 0; setTimeout(suivant, 450); } else { suivant(); }
+  }, 4500);
 })();
 
-/* ---------- lecture du Google Sheet ---------- */
+/* ---------- lecture du Sheet ---------- */
 async function lireSheet(){
   const base = 'https://docs.google.com/spreadsheets/d/'+CONFIG.SHEET_ID+'/gviz/tq?tqx=out:json';
-  const urls = [ base+'&sheet='+encodeURIComponent(CONFIG.SHEET_NAME), base ];
-  for (const u of urls){
+  for (const u of [ base+'&sheet='+encodeURIComponent(CONFIG.SHEET_NAME), base ]){
     try{
       const r = await fetch(u);
       if (!r.ok) continue;
@@ -524,11 +480,10 @@ async function lireSheet(){
       const j = JSON.parse(t.substring(t.indexOf('{'), t.lastIndexOf('}')+1));
       if (j.status === 'error') continue;
       return j.table;
-    }catch(e){ /* on tente l'URL suivante */ }
+    }catch(e){}
   }
   return null;
 }
-
 function valeur(c){
   if (!c) return '';
   if (c.f != null && c.f !== '') return String(c.f).trim();
@@ -541,128 +496,50 @@ const nombre = v => { const n = parseFloat(String(v).replace(/[^\d.,-]/g,'').rep
 async function charger(){
   const table = await lireSheet();
   if (!table){
-    $('#grille').innerHTML = `<div class="vide"><h3>Catalogue indisponible</h3>
-      <p>Le Google Sheet n'est pas encore partagé publiquement, ou le nom de l'onglet ne correspond pas. Partagez-le en lecture à « toute personne disposant du lien ».</p></div>`;
+    $('#chargement').innerHTML = 'Catalogue indisponible. Vérifiez que le Google Sheet est partagé en lecture à toute personne disposant du lien, et que l\'onglet s\'appelle bien « '+esc(CONFIG.SHEET_NAME)+' ».';
     return;
   }
-  const lignes = table.rows || [];
-  PRODUITS = lignes.map((r,i) => {
+  PRODUITS = (table.rows || []).map((r,i) => {
     const c = r.c || [];
     return {
-      id: 'p'+i,
-      nom: valeur(c[0]), maison: valeur(c[1]),
-      prix: nombre(valeur(c[2])), volume: valeur(c[3]),
-      dispo: valeur(c[4]) === '' ? true : oui(valeur(c[4])),
-      genre: valeur(c[5]), photo: valeur(c[6]), logo: valeur(c[7]),
-      star: oui(valeur(c[8])), prixBoutique: nombre(valeur(c[9]))
+      id:'p'+i,
+      nom: valeur(c[0]),              // A  Nom
+      maison: valeur(c[1]),           // B  Marque
+      prix: nombre(valeur(c[2])),     // C  Prix
+      volume: valeur(c[3]),           // D  Volume
+      dispo: valeur(c[4]) === '' ? true : oui(valeur(c[4])),  // E  Disponible
+      genre: valeur(c[5]),            // F  Genre
+      photo: valeur(c[6]),            // G  Photo
+      logo: valeur(c[7]),             // H  Logo_Marque
+      star: oui(valeur(c[8])),        // I  Best_Seller
+      prixBoutique: nombre(valeur(c[9])), // J  Prix_Boutique
+      famille: valeur(c[10]),         // K  Famille
+      recommande: oui(valeur(c[11])), // L  Recommande
+      derniere: oui(valeur(c[12])),   // M  Derniere_Piece
+      nouveau: oui(valeur(c[13])),    // N  Nouveau_Arrivage
+      blister: oui(valeur(c[14]))     // O  Blister
     };
   }).filter(p => p.nom);
 
   if (!PRODUITS.length){
-    $('#grille').innerHTML = `<div class="vide"><h3>Le catalogue est encore vide</h3>
-      <p>Ajoutez une première ligne dans le Google Sheet, elle apparaîtra ici automatiquement.</p></div>`;
-    return;
-  }
-  construireFiltres();
-  rendre();
-}
-
-/* ---------- filtres ---------- */
-function construireFiltres(){
-  const genres = [...new Set(PRODUITS.map(p => p.genre).filter(Boolean))];
-  const maisons = [...new Set(PRODUITS.map(p => p.maison).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'fr'));
-
-  $('#chips-genre').innerHTML =
-    `<button class="chip on" data-genre="">Tout le catalogue</button>` +
-    genres.map(g => `<button class="chip" data-genre="${esc(g)}">${esc(g)}</button>`).join('');
-
-  $('#chips-maison').innerHTML =
-    `<button class="chip on" data-maison="">Toutes les maisons</button>` +
-    maisons.map(m => `<button class="chip" data-maison="${esc(m)}">${esc(m)}</button>`).join('');
-
-  $$('#chips-genre .chip').forEach(b => b.onclick = () => {
-    F.genre = b.dataset.genre; majChips('#chips-genre','genre',F.genre); rendre();
-  });
-  $$('#chips-maison .chip').forEach(b => b.onclick = () => {
-    F.maison = b.dataset.maison; majChips('#chips-maison','maison',F.maison); rendre();
-  });
-}
-function majChips(sel, cle, val){
-  $$(sel+' .chip').forEach(b => b.classList.toggle('on', b.dataset[cle] === val));
-}
-
-$('#q').addEventListener('input', e => { F.q = e.target.value.toLowerCase().trim(); rendre(); });
-
-function filtrer(){
-  return PRODUITS.filter(p => {
-    if (F.genre && p.genre !== F.genre) return false;
-    if (F.maison && p.maison !== F.maison) return false;
-    if (F.q && !(p.nom+' '+p.maison).toLowerCase().includes(F.q)) return false;
-    return true;
-  }).sort((a,b) => (b.star - a.star) || a.maison.localeCompare(b.maison,'fr') || a.nom.localeCompare(b.nom,'fr'));
-}
-
-/* ---------- rendu ---------- */
-function esc(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-
-function rendre(){
-  const liste = filtrer();
-  const g = $('#grille');
-
-  $('#compte').textContent = liste.length
-    ? liste.length + (liste.length > 1 ? ' parfums' : ' parfum')
-    : '';
-
-  if (!liste.length){
-    g.innerHTML = `<div class="vide">
-      <h3>Ce parfum n'est pas au catalogue pour le moment</h3>
-      <p>Écrivez-nous sur WhatsApp : beaucoup de références se trouvent sur demande.</p>
-      <a class="btn-fin" href="${CONFIG.WA_NUMERO ? 'https://wa.me/'+CONFIG.WA_NUMERO : CONFIG.WA_SECOURS}" target="_blank" rel="noopener">Nous écrire sur WhatsApp</a>
-    </div>`;
+    $('#chargement').textContent = 'Le catalogue est encore vide. Ajoutez une première ligne dans le Google Sheet.';
     return;
   }
 
-  let html = '';
-  const shopper = F.maison && MARQUES_SHOPPER.includes(F.maison.toLowerCase());
-  if (shopper){
-    html += `<div class="mention">
-      <p>Sur cette maison, nous agissons en tant que personal shopper : la référence est recherchée et achetée pour vous.</p>
-      <small>Le prix indiqué n'est pas à prendre en compte. Les images utilisées appartiennent aux marques, tous droits réservés à leurs propriétaires respectifs.</small>
-    </div>`;
-  }
+  const par = {};
+  PRODUITS.forEach(p => {
+    const m = p.maison || 'Autres';
+    if (!par[m]) par[m] = { nom:m, logo:'', n:0 };
+    if (!par[m].logo && p.logo) par[m].logo = p.logo;
+    par[m].n++;
+  });
+  MAISONS = Object.values(par).sort((a,b) => a.nom.localeCompare(b.nom,'fr'));
 
-  html += liste.map(p => {
-    const initiale = esc((p.nom[0] || '·').toUpperCase());
-    const aff = affichagePrix(p);
-    const visuel = `<div class="mono">${initiale}</div>`
-      + (p.photo ? `<img src="${esc(p.photo)}" alt="${esc(p.nom)}" loading="lazy" style="position:absolute;inset:0" onerror="this.remove()">` : '');
-    const detail = [p.volume, p.genre].filter(Boolean).join(' / ');
-    return `<article class="carte">
-      <div class="visuel">
-        ${visuel}
-        ${p.star ? '<span class="etiq">Coup de cœur</span>' : ''}
-        ${p.dispo ? '' : '<div class="epuise">Épuisé</div>'}
-      </div>
-      <div class="infos">
-        ${p.maison ? `<div class="maison">${esc(p.maison)}</div>` : ''}
-        <div class="titre">${esc(p.nom)}</div>
-        ${detail ? `<div class="detail">${esc(detail)}</div>` : ''}
-        <div class="prix">
-          ${aff.barre ? `<span class="barre">${euro(aff.barre)}</span>` : ''}
-          <b>${aff.prix > 0 ? euro(aff.prix) : 'Prix sur demande'}</b>
-        </div>
-        <button class="ajout" data-id="${p.id}" ${p.dispo ? '' : 'disabled'}>${p.dispo ? 'Ajouter' : 'Indisponible'}</button>
-      </div>
-    </article>`;
-  }).join('');
-
-  g.innerHTML = html;
-  $$('.ajout:not([disabled])').forEach(b => b.onclick = () => ajouter(b.dataset.id));
+  $('#chargement').style.display = 'none';
+  allerAccueil();
 }
 
 /* ---------- prix et code ---------- */
-// Par défaut on montre le prix boutique (colonne J).
-// Avec le code, le prix boutique est barré et le tarif catalogue (colonne C) apparaît.
 function affichagePrix(p){
   const boutique = p.prixBoutique > 0 ? p.prixBoutique : 0;
   const catalogue = p.prix > 0 ? p.prix : 0;
@@ -678,11 +555,10 @@ function majCodeUI(){
   $('#bloc-code').style.display  = CODE_OK ? 'none' : 'flex';
 }
 function appliquerCode(){
-  const v = $('#code').value.trim();
-  if (v.toLowerCase() === CONFIG.CODE_PROMO.toLowerCase()){
+  if ($('#code').value.trim().toLowerCase() === CONFIG.CODE_PROMO.toLowerCase()){
     CODE_OK = true;
     try { localStorage.setItem('torino_code','1'); } catch(e){}
-    majCodeUI(); rendre(); majPanier();
+    majCodeUI(); redessiner(); majPanier();
     notifier('Code accepté, les tarifs catalogue sont affichés');
   } else {
     notifier('Ce code n\'est pas reconnu');
@@ -693,8 +569,156 @@ $('#code').addEventListener('keydown', e => { if (e.key === 'Enter') appliquerCo
 $('#retirer-code').onclick = () => {
   CODE_OK = false; $('#code').value = '';
   try { localStorage.removeItem('torino_code'); } catch(e){}
-  majCodeUI(); rendre(); majPanier();
+  majCodeUI(); redessiner(); majPanier();
 };
+
+/* ---------- carte produit ---------- */
+function carte(p, etiq, classe){
+  const aff = affichagePrix(p);
+  const initiale = esc((p.nom[0] || '·').toUpperCase());
+  const visuel = `<div class="mono">${initiale}</div>`
+    + (p.photo ? `<img src="${esc(p.photo)}" alt="${esc(p.nom)}" loading="lazy" style="position:absolute;inset:0" onerror="this.remove()">` : '');
+  const detail = [p.volume, p.genre, p.famille].filter(Boolean).join(' / ');
+  return `<article class="carte">
+    <div class="visuel">
+      ${visuel}
+      ${etiq ? `<span class="etiq ${classe}">${esc(etiq)}</span>` : ''}
+      ${p.dispo ? '' : '<div class="epuise">Épuisé</div>'}
+    </div>
+    <div class="infos">
+      ${p.maison ? `<div class="maison">${esc(p.maison)}</div>` : ''}
+      <div class="titre">${esc(p.nom)}</div>
+      ${detail ? `<div class="detail">${esc(detail)}</div>` : ''}
+      ${p.blister ? '<div class="blister">Sous blister</div>' : ''}
+      <div class="prix">
+        ${aff.barre ? `<span class="barre">${euro(aff.barre)}</span>` : ''}
+        <b>${aff.prix > 0 ? euro(aff.prix) : 'Prix sur demande'}</b>
+      </div>
+      <button class="ajout" data-id="${p.id}" ${p.dispo ? '' : 'disabled'}>${p.dispo ? 'Ajouter' : 'Indisponible'}</button>
+    </div>
+  </article>`;
+}
+function brancherAjouts(racine){
+  racine.querySelectorAll('.ajout:not([disabled])').forEach(b => b.onclick = () => ajouter(b.dataset.id));
+}
+
+/* ---------- vue accueil ---------- */
+function allerAccueil(){
+  VUE = 'accueil'; MAISON_ACTIVE = ''; GENRE = ''; FAMILLE = ''; RECHERCHE = '';
+  $('#q').value = '';
+  $('#vue-catalogue').style.display = 'none';
+  $('#vue-accueil').style.display = 'block';
+  rendreAccueil();
+}
+function rendreAccueil(){
+  let html = '';
+  RUBRIQUES.forEach(r => {
+    const liste = PRODUITS.filter(p => p[r.cle]).slice(0,4);
+    if (!liste.length) return;
+    html += `<section class="section">
+      <div class="section-tete"><h2>${r.titre}</h2></div>
+      <div class="rang">${liste.map(p => carte(p, r.etiq, r.classe)).join('')}</div>
+    </section>`;
+  });
+  $('#rubriques').innerHTML = html;
+
+  $('#grille-maisons').innerHTML = MAISONS.map(m => `
+    <button class="maison-carte" data-maison="${esc(m.nom)}">
+      <div class="maison-logo">
+        ${m.logo
+          ? `<img src="${esc(m.logo)}" alt="${esc(m.nom)}" loading="lazy" onerror="this.replaceWith(document.createTextNode(''))">`
+          : `<span class="init">${esc(m.nom.slice(0,2).toUpperCase())}</span>`}
+      </div>
+      <div class="maison-nom">${esc(m.nom)}</div>
+      <div class="maison-nb">${m.n} parfum${m.n > 1 ? 's' : ''}</div>
+    </button>`).join('');
+
+  $$('#grille-maisons .maison-carte').forEach(b => b.onclick = () => ouvrirMaison(b.dataset.maison));
+  brancherAjouts($('#rubriques'));
+}
+
+/* ---------- vue catalogue ---------- */
+function ouvrirMaison(nom){
+  VUE = 'catalogue'; MAISON_ACTIVE = nom; GENRE = ''; FAMILLE = ''; RECHERCHE = ''; $('#q').value = '';
+  basculerCatalogue();
+}
+function basculerCatalogue(){
+  $('#vue-accueil').style.display = 'none';
+  $('#vue-catalogue').style.display = 'block';
+  $('#cat-titre').textContent = MAISON_ACTIVE || (RECHERCHE ? 'Résultats' : 'Tout le catalogue');
+  rendreCatalogue();
+  window.scrollTo({ top: $('#vue-catalogue').offsetTop - 80, behavior:'smooth' });
+}
+$('#retour').onclick = allerAccueil;
+
+function listeFiltree(){
+  return PRODUITS.filter(p => {
+    if (MAISON_ACTIVE && (p.maison || 'Autres') !== MAISON_ACTIVE) return false;
+    if (GENRE && p.genre !== GENRE) return false;
+    if (FAMILLE && p.famille !== FAMILLE) return false;
+    if (RECHERCHE && !(p.nom+' '+p.maison+' '+p.famille).toLowerCase().includes(RECHERCHE)) return false;
+    return true;
+  }).sort((a,b) => (b.star - a.star) || a.maison.localeCompare(b.maison,'fr') || a.nom.localeCompare(b.nom,'fr'));
+}
+
+function rendreChips(sel, valeurs, actif, poser){
+  const box = $(sel);
+  if (valeurs.length < 2){ box.innerHTML = ''; return; }
+  box.innerHTML = `<button class="chip${actif?'':' on'} " data-v="">Tout</button>`
+    + valeurs.map(v => `<button class="chip${actif===v?' on':''}" data-v="${esc(v)}">${esc(v)}</button>`).join('');
+  box.querySelectorAll('.chip').forEach(b => b.onclick = () => { poser(b.dataset.v); rendreCatalogue(); });
+}
+
+function rendreCatalogue(){
+  const base = PRODUITS.filter(p => {
+    if (MAISON_ACTIVE && (p.maison || 'Autres') !== MAISON_ACTIVE) return false;
+    if (RECHERCHE && !(p.nom+' '+p.maison+' '+p.famille).toLowerCase().includes(RECHERCHE)) return false;
+    return true;
+  });
+  rendreChips('#chips-famille', [...new Set(base.map(p => p.famille).filter(Boolean))], FAMILLE, v => FAMILLE = v);
+  rendreChips('#chips-genre',   [...new Set(base.map(p => p.genre).filter(Boolean))],   GENRE,   v => GENRE = v);
+
+  const liste = listeFiltree();
+  $('#compte').textContent = liste.length ? liste.length + (liste.length > 1 ? ' parfums' : ' parfum') : '';
+
+  if (!liste.length){
+    $('#grille').innerHTML = `<div class="vide">
+      <h3>Ce parfum n'est pas au catalogue pour le moment</h3>
+      <p>Écrivez-nous sur WhatsApp : beaucoup de références se trouvent sur demande.</p>
+      <a class="btn-fin" href="${CONFIG.WA_NUMERO ? 'https://wa.me/'+CONFIG.WA_NUMERO : CONFIG.WA_SECOURS}" target="_blank" rel="noopener">Nous écrire sur WhatsApp</a>
+    </div>`;
+    return;
+  }
+
+  let html = '';
+  if (MAISON_ACTIVE && MARQUES_SHOPPER.includes(MAISON_ACTIVE.toLowerCase())){
+    html += `<div class="mention">
+      <p>Sur cette maison, nous agissons en tant que personal shopper : la référence est recherchée et achetée pour vous.</p>
+      <small>Le prix indiqué n'est pas à prendre en compte. Les images utilisées appartiennent aux marques, tous droits réservés à leurs propriétaires respectifs.</small>
+    </div>`;
+  }
+  html += liste.map(p => carte(p,
+    p.star ? 'Best-seller' : p.nouveau ? 'Nouveauté' : p.derniere ? 'Dernière pièce' : '',
+    p.star ? 'bs' : p.nouveau ? 'nv' : 'dp')).join('');
+
+  $('#grille').innerHTML = html;
+  brancherAjouts($('#grille'));
+}
+
+function redessiner(){ VUE === 'accueil' ? rendreAccueil() : rendreCatalogue(); }
+
+$('#q').addEventListener('input', e => {
+  RECHERCHE = e.target.value.toLowerCase().trim();
+  if (RECHERCHE){
+    VUE = 'catalogue'; MAISON_ACTIVE = ''; GENRE = ''; FAMILLE = '';
+    $('#vue-accueil').style.display = 'none';
+    $('#vue-catalogue').style.display = 'block';
+    $('#cat-titre').textContent = 'Résultats';
+    rendreCatalogue();
+  } else if (!MAISON_ACTIVE){
+    allerAccueil();
+  }
+});
 
 /* ---------- panier ---------- */
 function ajouter(id){
@@ -717,7 +741,7 @@ function retirer(id){ PANIER = PANIER.filter(x => x.id !== id); majPanier(); }
 function lignesPanier(){
   return PANIER.map(l => {
     const p = PRODUITS.find(x => x.id === l.id);
-    return p ? { ...p, q: l.q, unitaire: prixActif(p) } : null;
+    return p ? { ...p, q:l.q, unitaire: prixActif(p) } : null;
   }).filter(Boolean);
 }
 
@@ -728,7 +752,7 @@ function majPanier(){
   $('#pastille').textContent = n;
   $('#total').textContent = euro(total);
   $('#panier-vide').style.display = n ? 'none' : 'block';
-  $('#bloc-mode').style.display = n ? 'block' : 'none';
+  $('#vers-rdv').style.display = n ? 'block' : 'none';
 
   $('#panier-lignes').innerHTML = lignes.map(l => `
     <div class="ligne">
@@ -750,10 +774,12 @@ function majPanier(){
   $$('[data-plus]').forEach(b => b.onclick = () => changerQte(b.dataset.plus, 1));
   $$('[data-supp]').forEach(b => b.onclick = () => retirer(b.dataset.supp));
 
-  majValidation();
+  $('#valider').disabled = !PANIER.length;
+  majValidationRdv();
+  if ($('#page-rdv').classList.contains('on')) majRdv();
 }
 
-/* ---------- rendez-vous ---------- */
+/* ---------- calendrier ---------- */
 const JOURS = ['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
 const MOIS  = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
 const cle = d => d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
@@ -767,8 +793,7 @@ function rendreCalendrier(){
   $('#cal-prev').disabled = calRef <= new Date(AUJ.getFullYear(), AUJ.getMonth(), 1);
   $('#cal-next').disabled = calRef >= new Date(LIMITE.getFullYear(), LIMITE.getMonth(), 1);
 
-  const premier = new Date(calRef.getFullYear(), calRef.getMonth(), 1);
-  const decalage = (premier.getDay() + 6) % 7;            // semaine qui commence lundi
+  const decalage = (new Date(calRef.getFullYear(), calRef.getMonth(), 1).getDay() + 6) % 7;
   const nbJours = new Date(calRef.getFullYear(), calRef.getMonth()+1, 0).getDate();
 
   let html = '';
@@ -782,7 +807,7 @@ function rendreCalendrier(){
   $('#cal-grille').innerHTML = html;
   $$('#cal-grille button:not([disabled])').forEach(b => b.onclick = () => {
     RDV.date = b.dataset.j; RDV.heure = '';
-    rendreCalendrier(); remplirCreneaux(); majValidation();
+    rendreCalendrier(); remplirCreneaux(); majValidationRdv();
   });
 }
 $('#cal-prev').onclick = () => { calRef.setMonth(calRef.getMonth()-1); rendreCalendrier(); };
@@ -800,7 +825,7 @@ function remplirCreneaux(){
       let off = false;
       if (RDV.date === auj){
         const t = new Date(); t.setHours(h, m, 0, 0);
-        off = (t - maintenant) < 2*60*60*1000;   // créneau réservable 2h à l'avance
+        off = (t - maintenant) < 2*60*60*1000;
       }
       html += `<button class="creneau${RDV.heure===lib?' on':''}" data-h="${lib}" ${off?'disabled':''}>${lib}</button>`;
     }
@@ -809,36 +834,56 @@ function remplirCreneaux(){
   $$('#creneaux .creneau:not([disabled])').forEach(b => b.onclick = () => {
     RDV.heure = b.dataset.h;
     $$('#creneaux .creneau').forEach(x => x.classList.toggle('on', x.dataset.h === RDV.heure));
-    majValidation();
+    majValidationRdv();
   });
 }
 
-$$('.mode').forEach(b => b.onclick = () => {
-  MODE = b.dataset.mode;
-  $$('.mode').forEach(x => x.classList.toggle('on', x === b));
-  $('#bloc-rdv').style.display = MODE === 'rdv' ? 'block' : 'none';
-  $('#valider-txt').textContent = MODE === 'rdv' ? 'Réserver sur WhatsApp' : 'Commander sur WhatsApp';
-  if (MODE === 'rdv') remplirCreneaux();
-  majValidation();
-});
-$('#rdv-nom').addEventListener('input', majValidation);
-
-function majValidation(){
-  const b = $('#valider');
-  if (!PANIER.length){ b.disabled = true; return; }
-  if (MODE === 'rdv'){
-    b.disabled = !(RDV.date && RDV.heure && $('#rdv-nom').value.trim().length > 1);
-  } else {
-    b.disabled = false;
-  }
+/* ---------- page rendez-vous ---------- */
+function ouvrirRdv(){
+  fermer();
+  $('#fiche').classList.remove('on');
+  majRdv();
+  remplirCreneaux();
+  $('#page-rdv').classList.add('on');
+  document.body.style.overflow = 'hidden';
 }
+function fermerRdv(){
+  $('#page-rdv').classList.remove('on');
+  document.body.style.overflow = '';
+}
+$('#fermer-rdv').onclick = fermerRdv;
+$('#page-rdv').onclick = e => { if (e.target.id === 'page-rdv') fermerRdv(); };
+$$('[data-ouvrir-rdv]').forEach(b => b.onclick = ouvrirRdv);
 
-/* ---------- message WhatsApp ---------- */
-function libelleDate(cle){
-  const d = new Date(cle + 'T12:00:00');
+function majRdv(){
+  const lignes = lignesPanier();
+  const box = $('#rdv-selection');
+  if (!lignes.length){
+    box.innerHTML = `<div class="rdv-manque">Aucun parfum sélectionné pour l'instant.
+      <button id="vers-catalogue">Parcourir le catalogue</button></div>`;
+    $('#vers-catalogue').onclick = () => { fermerRdv(); $('#q').focus(); };
+  } else {
+    const total = lignes.reduce((s,l) => s + l.unitaire*l.q, 0);
+    box.innerHTML = lignes.map(l => `
+      <div class="rdv-item">
+        <div>${esc(l.nom)}<span> ${esc([l.maison, l.volume].filter(Boolean).join(' / '))}</span></div>
+        <span>× ${l.q}</span>
+      </div>`).join('')
+      + `<div class="rdv-total"><span>Total</span><b>${euro(total)}</b></div>`;
+  }
+  majValidationRdv();
+}
+function majValidationRdv(){
+  $('#envoyer-rdv').disabled = !(PANIER.length && RDV.date && RDV.heure && $('#rdv-nom').value.trim().length > 1);
+}
+$('#rdv-nom').addEventListener('input', majValidationRdv);
+
+/* ---------- messages WhatsApp ---------- */
+function libelleDate(k){
+  const d = new Date(k + 'T12:00:00');
   return JOURS[d.getDay()] + ' ' + d.getDate() + ' ' + MOIS[d.getMonth()] + ' ' + d.getFullYear();
 }
-function construireMessage(){
+function construireMessage(pourRdv){
   const lignes = lignesPanier();
   const total = lignes.reduce((s,l) => s + l.unitaire*l.q, 0);
   const articles = lignes.map(l =>
@@ -847,30 +892,29 @@ function construireMessage(){
   ).join('\n');
   const mentionCode = CODE_OK ? '\nCode ' + CONFIG.CODE_PROMO + ' appliqué' : '';
 
-  if (MODE === 'rdv'){
-    return "Bonjour, je souhaite réserver un créneau au showroom de Strasbourg.\n\n"
+  if (pourRdv){
+    return "Bonjour, je souhaite prendre rendez-vous au showroom de Strasbourg.\n\n"
       + "Nom : " + $('#rdv-nom').value.trim() + "\n"
       + "Jour : " + libelleDate(RDV.date) + "\n"
       + "Heure : " + RDV.heure + "\n\n"
       + "Parfums retenus :\n" + articles + "\n\n"
       + "Total : " + euro(total) + mentionCode + "\n\n"
-      + "J'ai bien noté que le rendez-vous est une prestation conclue par l'achat d'au moins un parfum. J'attends votre confirmation.";
+      + "J'ai bien noté que le rendez-vous se conclut par l'achat d'au moins un parfum. J'attends votre confirmation.";
   }
   return "Bonjour, j'aimerais passer commande :\n\n" + articles
     + "\n\nTotal : " + euro(total) + mentionCode + "\nMode : livraison";
 }
-
-$('#valider').onclick = () => {
-  const msg = construireMessage();
+function envoyerWhatsApp(msg){
   if (CONFIG.WA_NUMERO){
     window.open('https://wa.me/' + CONFIG.WA_NUMERO + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
   } else {
-    // lien court wa.me/message : le texte ne peut pas être pré-rempli, on le copie
     try { navigator.clipboard.writeText(msg); } catch(e){}
     notifier('Message copié. Collez-le dans la conversation WhatsApp qui s\'ouvre.');
     setTimeout(() => window.open(CONFIG.WA_SECOURS, '_blank', 'noopener'), 900);
   }
-};
+}
+$('#valider').onclick = () => envoyerWhatsApp(construireMessage(false));
+$('#envoyer-rdv').onclick = () => envoyerWhatsApp(construireMessage(true));
 
 /* ---------- ouverture / fermeture ---------- */
 function ouvrir(){ $('#tiroir').classList.add('on'); $('#voile').classList.add('on'); }
@@ -890,7 +934,7 @@ const FICHES = {
       <h3>Comment ça se passe</h3>
       <p>La visite est un accompagnement : on sent, on compare, on affine jusqu'à trouver le parfum qui vous va. Elle se conclut par l'achat d'au moins un parfum, ce n'est pas une simple séance d'essai.</p>
       <h3>Réserver</h3>
-      <p>Ajoutez le ou les parfums qui vous intéressent à votre sélection, ouvrez le panier, choisissez « Showroom », puis votre jour et votre heure. Le message de réservation part directement sur WhatsApp.</p>`
+      <p>Ajoutez les parfums qui vous intéressent à votre sélection, puis cliquez sur « Prendre rendez-vous » en haut de la page.</p>`
   },
   livraison: {
     titre: 'Livraison',
@@ -898,7 +942,7 @@ const FICHES = {
       <h3>Zone</h3>
       <p>Nous expédions dans le monde entier. Les frais varient selon la destination.</p>
       <h3>Frais</h3>
-      <p>10 € fixes pour la France, la Belgique, l'Espagne, le Portugal et l'Italie, quel que soit le nombre de produits. Pour les autres destinations, les frais sont calculés et annoncés sur WhatsApp avant la confirmation.</p>
+      <p>10 € fixes pour la France, la Belgique, l'Espagne, le Portugal et l'Italie, quel que soit le nombre de produits. Pour les autres destinations, les frais sont annoncés sur WhatsApp avant la confirmation.</p>
       <h3>Délais et suivi</h3>
       <p>Les délais dépendent de la disponibilité du produit et de la zone. Le suivi est communiqué sur WhatsApp une fois la commande préparée.</p>
       <h3>Échantillons</h3>
@@ -928,7 +972,7 @@ $$('[data-fiche]').forEach(b => b.onclick = e => {
 $('#fermer-fiche').onclick = () => $('#fiche').classList.remove('on');
 $('#fiche').onclick = e => { if (e.target.id === 'fiche') $('#fiche').classList.remove('on'); };
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape'){ fermer(); $('#fiche').classList.remove('on'); }
+  if (e.key === 'Escape'){ fermer(); fermerRdv(); $('#fiche').classList.remove('on'); }
 });
 
 let tNotif;
