@@ -102,7 +102,26 @@ nav button:hover{color:var(--creme);border-bottom-color:var(--terre-vive)}
 
 /* ---------- filtres ---------- */
 .outils{padding:38px 0 8px}
-.recherche{position:relative;max-width:520px}
+.ligne-outils{display:flex;gap:12px;align-items:stretch;flex-wrap:wrap}
+.recherche{position:relative;flex:1;min-width:240px;max-width:520px}
+.bloc-code{display:flex;gap:8px}
+.bloc-code input{
+  width:130px;background:var(--bois-clair);border:1px solid var(--trait);
+  color:var(--creme);padding:14px 14px;border-radius:var(--r);font-size:15px;font-family:inherit;
+}
+.bloc-code input::placeholder{color:rgba(243,230,216,.42)}
+.bloc-code button{
+  border:1px solid var(--argile);color:var(--argile);
+  padding:0 18px;border-radius:var(--r);font-size:14.5px;white-space:nowrap;
+}
+.bloc-code button:hover{background:var(--argile);color:var(--bois)}
+.code-actif{
+  margin-top:12px;font-size:13.5px;color:var(--argile);
+  background:rgba(168,72,31,.14);border-left:2px solid var(--terre);
+  padding:9px 13px;border-radius:3px;
+}
+.code-actif button{text-decoration:underline;font-size:13px;color:var(--creme-doux);margin-left:8px}
+.code-actif button:hover{color:var(--creme)}
 .recherche input{
   width:100%;background:var(--bois-clair);border:1px solid var(--trait);
   color:var(--creme);padding:14px 16px 14px 44px;border-radius:var(--r);font-size:15px;
@@ -214,6 +233,21 @@ nav button:hover{color:var(--creme);border-bottom-color:var(--terre-vive)}
   width:100%;background:var(--bois-clair);border:1px solid var(--trait);
   color:var(--creme);padding:11px 12px;border-radius:var(--r);font-size:14.5px;font-family:inherit;
 }
+.cal{border:1px solid var(--trait);border-radius:var(--r);padding:12px;margin-bottom:13px}
+.cal-tete{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.cal-tete span{font-size:14.5px}
+.cal-tete button{width:28px;height:28px;border:1px solid var(--trait);border-radius:3px;color:var(--creme-doux);font-size:16px;line-height:1}
+.cal-tete button:hover:not([disabled]){border-color:var(--argile);color:var(--creme)}
+.cal-tete button[disabled]{opacity:.25;cursor:not-allowed}
+.cal-jours,.cal-grille{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-jours span{text-align:center;font-size:11px;color:rgba(243,230,216,.45);padding-bottom:4px}
+.cal-grille button{
+  aspect-ratio:1;border:1px solid transparent;border-radius:3px;
+  font-size:13.5px;color:var(--creme);display:flex;align-items:center;justify-content:center;
+}
+.cal-grille button:hover:not([disabled]){border-color:var(--argile)}
+.cal-grille button.on{background:var(--terre);color:#fff}
+.cal-grille button[disabled]{color:rgba(243,230,216,.22);cursor:not-allowed}
 .creneaux{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:7px;max-height:168px;overflow-y:auto}
 .creneau{border:1px solid var(--trait);border-radius:3px;padding:8px 4px;font-size:13.5px;color:var(--creme-doux);text-align:center}
 .creneau:hover{border-color:var(--argile);color:var(--creme)}
@@ -322,9 +356,19 @@ footer{background:var(--bois);border-top:1px solid var(--trait);padding:52px 0 2
 
 <main class="wrap">
   <div class="outils">
-    <div class="recherche">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-      <input type="search" id="q" placeholder="Recherchez votre parfum" autocomplete="off">
+    <div class="ligne-outils">
+      <div class="recherche">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input type="search" id="q" placeholder="Recherchez votre parfum" autocomplete="off">
+      </div>
+      <div class="bloc-code" id="bloc-code">
+        <input type="text" id="code" placeholder="Code" autocomplete="off" spellcheck="false">
+        <button id="appliquer-code">Appliquer</button>
+      </div>
+    </div>
+    <div class="code-actif" id="code-actif" style="display:none">
+      Tarifs catalogue débloqués.
+      <button id="retirer-code">Retirer</button>
     </div>
     <div class="chips" id="chips-genre"></div>
     <div class="chips" id="chips-maison"></div>
@@ -384,8 +428,16 @@ footer{background:var(--bois);border-top:1px solid var(--trait);padding:52px 0 2
           <input type="text" id="rdv-nom" placeholder="Pour vous accueillir" autocomplete="name">
         </div>
         <div class="champ">
-          <label for="rdv-date">Jour</label>
-          <select id="rdv-date"></select>
+          <label>Jour</label>
+          <div class="cal">
+            <div class="cal-tete">
+              <button id="cal-prev" aria-label="Mois précédent">&lsaquo;</button>
+              <span id="cal-mois"></span>
+              <button id="cal-next" aria-label="Mois suivant">&rsaquo;</button>
+            </div>
+            <div class="cal-jours"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+            <div class="cal-grille" id="cal-grille"></div>
+          </div>
         </div>
         <div class="champ">
           <label>Heure</label>
@@ -418,20 +470,24 @@ footer{background:var(--bois);border-top:1px solid var(--trait);padding:52px 0 2
    À REMPLIR — les 4 seules lignes à modifier
    ======================================================================= */
 const CONFIG = {
-  NOM_BOUTIQUE : 'Maison Parfums',   // nom affiché en haut et en bas de page
+  NOM_BOUTIQUE : 'TORINO NICHE',
   SHEET_ID     : '1-QqjwquYNvA3C9pyc7VH_wFxveMefuUAWNQCu-PzWf0',
   SHEET_NAME   : 'Catalogue',        // nom exact de l'onglet en bas du Sheet
-  WA_NUMERO    : '',                 // ex : '33612345678' (indicatif, sans + ni 0)
-  WA_SECOURS   : 'https://wa.me/message/P6HN77WSSKMEE1'
+  WA_NUMERO    : '33626736000',      // +33 6 26 73 60 00
+  WA_SECOURS   : 'https://wa.me/message/P6HN77WSSKMEE1',
+  CODE_PROMO   : 'Torino67'          // débloque les tarifs catalogue
 };
 /* ===================================================================== */
 
 const MARQUES_SHOPPER = ['hermes','hermès','ysl','yves saint laurent','louis vuitton','dior','guerlain','gucci'];
 const MSG_BANDEAU = [
   'Showroom privé à Strasbourg, sur rendez-vous',
-  'Catalogue mis à jour chaque semaine',
-  'Rendez-vous possibles 7j/7, de 10h à 22h'
+  'Échantillons offerts pour l\'achat d\'un parfum',
+  'Catalogue mis à jour chaque semaine'
 ];
+
+let CODE_OK = false;
+try { CODE_OK = localStorage.getItem('torino_code') === '1'; } catch(e){}
 
 let PRODUITS = [], PANIER = [], MODE = 'livraison';
 let F = { q:'', genre:'', maison:'' };
@@ -577,6 +633,7 @@ function rendre(){
 
   html += liste.map(p => {
     const initiale = esc((p.nom[0] || '·').toUpperCase());
+    const aff = affichagePrix(p);
     const visuel = `<div class="mono">${initiale}</div>`
       + (p.photo ? `<img src="${esc(p.photo)}" alt="${esc(p.nom)}" loading="lazy" style="position:absolute;inset:0" onerror="this.remove()">` : '');
     const detail = [p.volume, p.genre].filter(Boolean).join(' / ');
@@ -591,8 +648,8 @@ function rendre(){
         <div class="titre">${esc(p.nom)}</div>
         ${detail ? `<div class="detail">${esc(detail)}</div>` : ''}
         <div class="prix">
-          ${p.prixBoutique > 0 ? `<span class="barre">${euro(p.prixBoutique)}</span>` : ''}
-          <b>${p.prix > 0 ? euro(p.prix) : 'Prix sur demande'}</b>
+          ${aff.barre ? `<span class="barre">${euro(aff.barre)}</span>` : ''}
+          <b>${aff.prix > 0 ? euro(aff.prix) : 'Prix sur demande'}</b>
         </div>
         <button class="ajout" data-id="${p.id}" ${p.dispo ? '' : 'disabled'}>${p.dispo ? 'Ajouter' : 'Indisponible'}</button>
       </div>
@@ -603,12 +660,48 @@ function rendre(){
   $$('.ajout:not([disabled])').forEach(b => b.onclick = () => ajouter(b.dataset.id));
 }
 
+/* ---------- prix et code ---------- */
+// Par défaut on montre le prix boutique (colonne J).
+// Avec le code, le prix boutique est barré et le tarif catalogue (colonne C) apparaît.
+function affichagePrix(p){
+  const boutique = p.prixBoutique > 0 ? p.prixBoutique : 0;
+  const catalogue = p.prix > 0 ? p.prix : 0;
+  if (CODE_OK && catalogue && boutique) return { prix: catalogue, barre: boutique };
+  if (CODE_OK && catalogue)            return { prix: catalogue, barre: 0 };
+  if (boutique)                        return { prix: boutique,  barre: 0 };
+  return { prix: catalogue, barre: 0 };
+}
+const prixActif = p => affichagePrix(p).prix;
+
+function majCodeUI(){
+  $('#code-actif').style.display = CODE_OK ? 'block' : 'none';
+  $('#bloc-code').style.display  = CODE_OK ? 'none' : 'flex';
+}
+function appliquerCode(){
+  const v = $('#code').value.trim();
+  if (v.toLowerCase() === CONFIG.CODE_PROMO.toLowerCase()){
+    CODE_OK = true;
+    try { localStorage.setItem('torino_code','1'); } catch(e){}
+    majCodeUI(); rendre(); majPanier();
+    notifier('Code accepté, les tarifs catalogue sont affichés');
+  } else {
+    notifier('Ce code n\'est pas reconnu');
+  }
+}
+$('#appliquer-code').onclick = appliquerCode;
+$('#code').addEventListener('keydown', e => { if (e.key === 'Enter') appliquerCode(); });
+$('#retirer-code').onclick = () => {
+  CODE_OK = false; $('#code').value = '';
+  try { localStorage.removeItem('torino_code'); } catch(e){}
+  majCodeUI(); rendre(); majPanier();
+};
+
 /* ---------- panier ---------- */
 function ajouter(id){
   const p = PRODUITS.find(x => x.id === id);
   if (!p) return;
   const l = PANIER.find(x => x.id === id);
-  if (l) l.q++; else PANIER.push({ id, nom:p.nom, maison:p.maison, prix:p.prix, volume:p.volume, photo:p.photo, q:1 });
+  if (l) l.q++; else PANIER.push({ id, q:1 });
   majPanier();
   notifier(p.nom + ' ajouté à votre sélection');
 }
@@ -621,21 +714,29 @@ function changerQte(id, d){
 }
 function retirer(id){ PANIER = PANIER.filter(x => x.id !== id); majPanier(); }
 
+function lignesPanier(){
+  return PANIER.map(l => {
+    const p = PRODUITS.find(x => x.id === l.id);
+    return p ? { ...p, q: l.q, unitaire: prixActif(p) } : null;
+  }).filter(Boolean);
+}
+
 function majPanier(){
-  const n = PANIER.reduce((s,l) => s+l.q, 0);
-  const total = PANIER.reduce((s,l) => s + l.prix*l.q, 0);
+  const lignes = lignesPanier();
+  const n = lignes.reduce((s,l) => s+l.q, 0);
+  const total = lignes.reduce((s,l) => s + l.unitaire*l.q, 0);
   $('#pastille').textContent = n;
   $('#total').textContent = euro(total);
   $('#panier-vide').style.display = n ? 'none' : 'block';
   $('#bloc-mode').style.display = n ? 'block' : 'none';
 
-  $('#panier-lignes').innerHTML = PANIER.map(l => `
+  $('#panier-lignes').innerHTML = lignes.map(l => `
     <div class="ligne">
       ${l.photo ? `<img src="${esc(l.photo)}" alt="">` : '<div class="ph"></div>'}
       <div class="ligne-txt">
         <div class="n">${esc(l.nom)}</div>
         <div class="m">${esc([l.maison, l.volume].filter(Boolean).join(' / '))}</div>
-        <div class="m">${euro(l.prix)}</div>
+        <div class="m">${l.unitaire > 0 ? euro(l.unitaire) : 'Prix sur demande'}</div>
         <div class="qte">
           <button data-moins="${l.id}" aria-label="Retirer un">−</button>
           <span>${l.q}</span>
@@ -655,26 +756,42 @@ function majPanier(){
 /* ---------- rendez-vous ---------- */
 const JOURS = ['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
 const MOIS  = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+const cle = d => d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
 
-function remplirDates(){
-  const sel = $('#rdv-date');
-  const today = new Date(); today.setHours(0,0,0,0);
-  let html = '<option value="">Choisissez un jour</option>';
-  for (let i = 0; i < 60; i++){
-    const d = new Date(today); d.setDate(today.getDate()+i);
-    const cle = d.toISOString().slice(0,10);
-    const lib = (i===0 ? "aujourd'hui, " : i===1 ? 'demain, ' : '') + JOURS[d.getDay()] + ' ' + d.getDate() + ' ' + MOIS[d.getMonth()];
-    html += `<option value="${cle}">${lib.charAt(0).toUpperCase()+lib.slice(1)}</option>`;
+const AUJ = new Date(); AUJ.setHours(0,0,0,0);
+const LIMITE = new Date(AUJ); LIMITE.setMonth(LIMITE.getMonth()+3);
+let calRef = new Date(AUJ.getFullYear(), AUJ.getMonth(), 1);
+
+function rendreCalendrier(){
+  $('#cal-mois').textContent = MOIS[calRef.getMonth()] + ' ' + calRef.getFullYear();
+  $('#cal-prev').disabled = calRef <= new Date(AUJ.getFullYear(), AUJ.getMonth(), 1);
+  $('#cal-next').disabled = calRef >= new Date(LIMITE.getFullYear(), LIMITE.getMonth(), 1);
+
+  const premier = new Date(calRef.getFullYear(), calRef.getMonth(), 1);
+  const decalage = (premier.getDay() + 6) % 7;            // semaine qui commence lundi
+  const nbJours = new Date(calRef.getFullYear(), calRef.getMonth()+1, 0).getDate();
+
+  let html = '';
+  for (let i = 0; i < decalage; i++) html += '<span></span>';
+  for (let j = 1; j <= nbJours; j++){
+    const d = new Date(calRef.getFullYear(), calRef.getMonth(), j);
+    const k = cle(d);
+    const off = d < AUJ || d > LIMITE;
+    html += `<button data-j="${k}" ${off?'disabled':''} class="${RDV.date===k?'on':''}">${j}</button>`;
   }
-  sel.innerHTML = html;
-  sel.onchange = () => { RDV.date = sel.value; RDV.heure = ''; remplirCreneaux(); majValidation(); };
-  remplirCreneaux();
+  $('#cal-grille').innerHTML = html;
+  $$('#cal-grille button:not([disabled])').forEach(b => b.onclick = () => {
+    RDV.date = b.dataset.j; RDV.heure = '';
+    rendreCalendrier(); remplirCreneaux(); majValidation();
+  });
 }
+$('#cal-prev').onclick = () => { calRef.setMonth(calRef.getMonth()-1); rendreCalendrier(); };
+$('#cal-next').onclick = () => { calRef.setMonth(calRef.getMonth()+1); rendreCalendrier(); };
 
 function remplirCreneaux(){
   const box = $('#creneaux');
   if (!RDV.date){ box.innerHTML = '<div class="detail" style="grid-column:1/-1">Choisissez d\'abord un jour.</div>'; return; }
-  const auj = new Date().toISOString().slice(0,10);
+  const auj = cle(new Date());
   const maintenant = new Date();
   let html = '';
   for (let h = 10; h <= 21; h++){
@@ -682,8 +799,8 @@ function remplirCreneaux(){
       const lib = String(h).padStart(2,'0') + 'h' + (m ? '30' : '00');
       let off = false;
       if (RDV.date === auj){
-        const limite = new Date(); limite.setHours(h, m, 0, 0);
-        off = (limite - maintenant) < 2*60*60*1000;   // créneau réservable 2h à l'avance
+        const t = new Date(); t.setHours(h, m, 0, 0);
+        off = (t - maintenant) < 2*60*60*1000;   // créneau réservable 2h à l'avance
       }
       html += `<button class="creneau${RDV.heure===lib?' on':''}" data-h="${lib}" ${off?'disabled':''}>${lib}</button>`;
     }
@@ -701,7 +818,7 @@ $$('.mode').forEach(b => b.onclick = () => {
   $$('.mode').forEach(x => x.classList.toggle('on', x === b));
   $('#bloc-rdv').style.display = MODE === 'rdv' ? 'block' : 'none';
   $('#valider-txt').textContent = MODE === 'rdv' ? 'Réserver sur WhatsApp' : 'Commander sur WhatsApp';
-  if (MODE === 'rdv' && !$('#rdv-date').options.length) remplirDates();
+  if (MODE === 'rdv') remplirCreneaux();
   majValidation();
 });
 $('#rdv-nom').addEventListener('input', majValidation);
@@ -722,10 +839,13 @@ function libelleDate(cle){
   return JOURS[d.getDay()] + ' ' + d.getDate() + ' ' + MOIS[d.getMonth()] + ' ' + d.getFullYear();
 }
 function construireMessage(){
-  const total = PANIER.reduce((s,l) => s + l.prix*l.q, 0);
-  const articles = PANIER.map(l =>
-    '• ' + l.nom + (l.maison ? ' – ' + l.maison : '') + (l.volume ? ' – ' + l.volume : '') + ' × ' + l.q + ' – ' + euro(l.prix*l.q)
+  const lignes = lignesPanier();
+  const total = lignes.reduce((s,l) => s + l.unitaire*l.q, 0);
+  const articles = lignes.map(l =>
+    '• ' + l.nom + (l.maison ? ' – ' + l.maison : '') + (l.volume ? ' – ' + l.volume : '')
+    + ' × ' + l.q + ' – ' + (l.unitaire > 0 ? euro(l.unitaire*l.q) : 'prix sur demande')
   ).join('\n');
+  const mentionCode = CODE_OK ? '\nCode ' + CONFIG.CODE_PROMO + ' appliqué' : '';
 
   if (MODE === 'rdv'){
     return "Bonjour, je souhaite réserver un créneau au showroom de Strasbourg.\n\n"
@@ -733,10 +853,11 @@ function construireMessage(){
       + "Jour : " + libelleDate(RDV.date) + "\n"
       + "Heure : " + RDV.heure + "\n\n"
       + "Parfums retenus :\n" + articles + "\n\n"
-      + "Total : " + euro(total) + "\n\n"
-      + "J'ai bien noté que le rendez-vous est une prestation conclue par l'achat d'au moins un parfum.";
+      + "Total : " + euro(total) + mentionCode + "\n\n"
+      + "J'ai bien noté que le rendez-vous est une prestation conclue par l'achat d'au moins un parfum. J'attends votre confirmation.";
   }
-  return "Bonjour, j'aimerais passer commande :\n\n" + articles + "\n\nTotal : " + euro(total) + "\nMode : livraison";
+  return "Bonjour, j'aimerais passer commande :\n\n" + articles
+    + "\n\nTotal : " + euro(total) + mentionCode + "\nMode : livraison";
 }
 
 $('#valider').onclick = () => {
@@ -779,7 +900,9 @@ const FICHES = {
       <h3>Frais</h3>
       <p>10 € fixes pour la France, la Belgique, l'Espagne, le Portugal et l'Italie, quel que soit le nombre de produits. Pour les autres destinations, les frais sont calculés et annoncés sur WhatsApp avant la confirmation.</p>
       <h3>Délais et suivi</h3>
-      <p>Les délais dépendent de la disponibilité du produit et de la zone. Le suivi est communiqué sur WhatsApp une fois la commande préparée.</p>`
+      <p>Les délais dépendent de la disponibilité du produit et de la zone. Le suivi est communiqué sur WhatsApp une fois la commande préparée.</p>
+      <h3>Échantillons</h3>
+      <p>Un échantillon est offert pour l'achat d'un parfum, selon les disponibilités du moment.</p>`
   },
   cgv: {
     titre: 'Conditions de vente',
@@ -815,7 +938,9 @@ function notifier(txt){
   clearTimeout(tNotif); tNotif = setTimeout(() => n.classList.remove('on'), 2600);
 }
 
-remplirDates();
+rendreCalendrier();
+remplirCreneaux();
+majCodeUI();
 charger();
 </script>
 </body>
