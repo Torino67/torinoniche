@@ -42,13 +42,13 @@ img{display:block;max-width:100%}
 :focus-visible{outline:2px solid var(--terre);outline-offset:3px}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
-.ticker{background:var(--or);color:#231708;font-size:13.5px;text-align:center;padding:9px 16px;min-height:38px;display:flex;align-items:center;justify-content:center}
+.ticker{background:var(--terre);color:var(--creme);font-size:13.5px;text-align:center;padding:9px 16px;min-height:38px;display:flex;align-items:center;justify-content:center}
 .ticker span{transition:opacity .45s}
 
 header{position:sticky;top:0;z-index:90;background:rgba(242,232,219,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--trait-clair)}
 .bar{display:flex;align-items:center;gap:20px;height:68px}
 .mark{font-family:'Fraunces',serif;font-size:23px;letter-spacing:.02em;white-space:nowrap;cursor:pointer}
-.mark em{font-style:normal;color:var(--or)}
+.mark em{font-style:normal;color:var(--terre)}
 nav{margin-left:auto;display:flex;gap:10px;align-items:center}
 .nav-lien{color:var(--encre-doux);font-size:14.5px;padding:8px 4px;border-bottom:1px solid transparent}
 .nav-lien:hover{color:var(--encre);border-bottom-color:var(--terre)}
@@ -94,28 +94,28 @@ nav{margin-left:auto;display:flex;gap:10px;align-items:center}
 .grille{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));padding:24px 0 0}
 
 /* carte produit, volontairement foncée */
-.carte{background:var(--bois);border-radius:var(--r);display:flex;flex-direction:column;overflow:hidden;color:var(--creme)}
-.visuel{position:relative;aspect-ratio:3/4;background:var(--bois-clair);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.carte{background:#FFFDFA;border:1px solid rgba(42,29,20,.12);border-radius:var(--r);display:flex;flex-direction:column;overflow:hidden;color:var(--encre)}
+.visuel{position:relative;aspect-ratio:3/4;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .visuel img{width:100%;height:100%;object-fit:cover}
-.mono{font-family:'Fraunces',serif;font-size:52px;color:rgba(224,194,166,.22)}
+.mono{font-family:'Fraunces',serif;font-size:52px;color:rgba(42,29,20,.14)}
 .etiq{position:absolute;top:10px;left:10px;color:#fff;font-size:10.5px;font-weight:700;padding:4px 9px;border-radius:3px;letter-spacing:.04em}
 .etiq.bs{background:var(--or);color:#231708}
 .etiq.nv{background:var(--terre)}
-.etiq.dp{background:#0B0704;border:1px solid var(--trait)}
-.epuise{position:absolute;inset:0;background:rgba(22,15,10,.74);display:flex;align-items:center;justify-content:center;color:var(--argile);font-size:14px}
+.etiq.dp{background:#2B1A12}
+.epuise{position:absolute;inset:0;background:rgba(255,253,250,.84);display:flex;align-items:center;justify-content:center;color:var(--terre);font-size:14px;font-weight:500}
 .infos{padding:15px 15px 17px;display:flex;flex-direction:column;flex:1;gap:5px}
-.maison{font-size:12.5px;color:var(--or-clair);letter-spacing:.04em}
+.maison{font-size:12.5px;color:var(--terre);letter-spacing:.04em}
 .titre{font-family:'Fraunces',serif;font-size:19px;line-height:1.25}
-.detail{font-size:13px;color:var(--creme-doux)}
-.blister{font-size:11.5px;color:var(--argile);border:1px solid var(--trait);border-radius:20px;padding:2px 9px;align-self:flex-start;margin-top:3px}
+.detail{font-size:13px;color:var(--encre-doux)}
+.blister{font-size:11.5px;color:var(--encre-doux);border:1px solid var(--trait-clair);border-radius:20px;padding:2px 9px;align-self:flex-start;margin-top:3px}
 .bas{margin-top:auto;padding-top:12px}
 .prix{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
 .prix b{font-size:20px;font-weight:500;font-family:'Fraunces',serif}
 .barre{color:var(--rouge);text-decoration:line-through;font-size:13.5px}
-.famille{font-size:12.5px;color:var(--creme-doux);line-height:1.45;margin-top:7px}
+.famille{font-size:12.5px;color:var(--encre-doux);line-height:1.45;margin-top:7px}
 .ajout{margin-top:12px;background:var(--terre);color:#fff;padding:10px;border-radius:var(--r);font-size:14px;font-weight:500;width:100%}
 .ajout:hover{background:var(--terre-vive)}
-.ajout[disabled]{background:var(--bois-clair);color:var(--creme-doux);cursor:not-allowed}
+.ajout[disabled]{background:rgba(42,29,20,.10);color:var(--encre-doux);cursor:not-allowed}
 
 /* cartes maisons, claires pour que les logos ressortent */
 .maisons{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));padding-top:4px}
@@ -150,9 +150,9 @@ nav{margin-left:auto;display:flex;gap:10px;align-items:center}
 .showroom h2{font-size:clamp(28px,4.4vw,42px);margin-bottom:8px}
 .showroom .accroche{color:var(--encre-doux);font-size:16.5px;max-width:52ch;margin-bottom:28px}
 .sr-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:34px}
-.sr-bloc{background:var(--surface);border:1px solid var(--trait-clair);border-radius:var(--r);padding:22px}
-.sr-bloc h3{font-family:'Karla',sans-serif;font-size:13px;font-weight:700;color:var(--terre);margin-bottom:9px}
-.sr-bloc p{font-size:14.5px;color:var(--encre-doux);margin-bottom:8px}
+.sr-bloc{background:var(--bois-nuit);color:var(--creme);border-radius:var(--r);padding:22px}
+.sr-bloc h3{font-family:'Karla',sans-serif;font-size:13px;font-weight:700;color:var(--or-clair);margin-bottom:9px}
+.sr-bloc p{font-size:14.5px;color:var(--creme-doux);margin-bottom:8px}
 .galerie{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
 .galerie figure{border-radius:var(--r);overflow:hidden;background:var(--bois-clair);aspect-ratio:1}
 .galerie img{width:100%;height:100%;object-fit:cover}
@@ -172,7 +172,7 @@ nav{margin-left:auto;display:flex;gap:10px;align-items:center}
 .fermer:hover{color:var(--encre)}
 .tiroir-corps{flex:1;overflow-y:auto;padding:20px 22px}
 .ligne{display:flex;gap:13px;padding:14px 0;border-bottom:1px solid var(--trait-clair)}
-.ligne img,.ligne .ph{width:58px;height:74px;object-fit:cover;border-radius:3px;background:var(--bois-clair);flex:none}
+.ligne img,.ligne .ph{width:58px;height:74px;object-fit:contain;border-radius:3px;background:#fff;border:1px solid var(--trait-clair);flex:none}
 .ligne-txt{flex:1;min-width:0}
 .ligne-txt .n{font-family:'Fraunces',serif;font-size:16px}
 .ligne-txt .m{font-size:12.5px;color:var(--encre-doux)}
