@@ -50,12 +50,13 @@ header{position:sticky;top:0;z-index:90;background:rgba(242,232,219,.94);backdro
 .mark{font-family:'Fraunces',serif;font-size:23px;letter-spacing:.02em;white-space:nowrap;cursor:pointer}
 .mark em{font-style:normal;color:var(--terre)}
 nav{margin-left:auto;display:flex;gap:10px;align-items:center}
-.nav-lien{color:var(--encre-doux);font-size:14.5px;padding:8px 4px;border-bottom:1px solid transparent}
-.nav-lien:hover{color:var(--encre);border-bottom-color:var(--terre)}
+.nav-btn{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--trait-clair);color:var(--encre);padding:9px 15px;border-radius:var(--r);font-size:14.5px;white-space:nowrap}
+.nav-btn:hover{border-color:var(--terre);color:var(--terre)}
+.nav-btn svg{opacity:.7}
 .nav-rdv{border:1px solid var(--terre);color:var(--terre);padding:9px 17px;border-radius:var(--r);font-size:14.5px;white-space:nowrap}
 .court{display:none}
 .nav-rdv:hover{background:var(--terre);color:#fff}
-.panier-btn{display:flex;align-items:center;gap:9px;background:var(--terre);color:#fff;padding:10px 18px;border-radius:var(--r);font-size:14.5px;font-weight:500}
+.panier-btn{display:flex;align-items:center;gap:8px;background:var(--terre);color:#fff;padding:10px 14px;border-radius:var(--r);font-size:14.5px;font-weight:500}
 .panier-btn:hover{background:var(--terre-vive)}
 .pastille{background:#fff;color:var(--terre);border-radius:20px;min-width:20px;height:20px;font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;padding:0 5px}
 
@@ -64,7 +65,8 @@ nav{margin-left:auto;display:flex;gap:10px;align-items:center}
 .hero .wrap{position:relative}
 .hero-grid{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:start}
 .filet{width:3px;background:linear-gradient(180deg,var(--or),transparent);border-radius:3px;align-self:stretch;min-height:140px}
-.hero h1{font-size:clamp(40px,7vw,74px);max-width:11ch}
+.hero h1{font-size:clamp(34px,5.6vw,66px);max-width:none}
+@media(min-width:761px){.hero h1{white-space:nowrap}}
 .hero p{margin-top:24px;max-width:50ch;color:var(--creme-doux);font-size:16.5px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .btn-plein{background:var(--terre);color:#fff;padding:12px 22px;border-radius:var(--r);font-size:14.5px;font-weight:500}
@@ -119,6 +121,12 @@ nav{margin-left:auto;display:flex;gap:10px;align-items:center}
 .ajout[disabled]{background:rgba(42,29,20,.10);color:var(--encre-doux);cursor:not-allowed}
 
 /* cartes maisons, claires pour que les logos ressortent */
+.familles{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.famille-carte{background:var(--surface);border:1px solid var(--trait-clair);border-radius:var(--r);padding:16px;text-align:left;color:var(--encre);transition:border-color .2s}
+.famille-carte:hover{border-color:var(--terre)}
+.famille-carte .f-nom{font-family:'Fraunces',serif;font-size:18px;line-height:1.2}
+.famille-carte .f-nb{font-size:12.5px;color:var(--encre-doux);margin-top:4px}
+.famille-carte .f-trait{width:26px;height:2px;background:var(--or);margin-top:10px;border-radius:2px}
 .maisons{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));padding-top:4px}
 .maison-carte{background:var(--surface);border:1px solid var(--trait-clair);border-radius:var(--r);padding:22px 16px;text-align:center;color:var(--encre);transition:border-color .2s}
 .maison-carte:hover{border-color:var(--or)}
@@ -249,20 +257,22 @@ footer{background:var(--bois-nuit);color:var(--creme);padding:52px 0 26px;margin
 .notif.on{opacity:1;visibility:visible;transform:translate(-50%,0)}
 
 @media(max-width:900px){.rang{grid-template-columns:repeat(2,1fr)}.sr-grid{grid-template-columns:1fr}}
+@media(max-width:430px){.nav-btn{display:none}}
 @media(max-width:760px){
   .bar{gap:10px}
-  .nav-lien{display:none}
+  .nav-btn{padding:9px 11px;font-size:13.5px}
+  .nav-btn svg{display:none}
   .nav-rdv{padding:9px 13px;font-size:13.5px}
   .long{display:none}
   .court{display:inline}
   .panier-btn{padding:10px 12px;gap:7px}
-  .panier-mot{display:none}
   .hero{padding:50px 0 44px}
   .hero-grid{grid-template-columns:1fr;gap:20px}
   .filet{width:100%;height:3px;min-height:0;background:linear-gradient(90deg,var(--terre-vive),transparent)}
   .rang,.grille{gap:14px}
   .grille{grid-template-columns:repeat(2,1fr)}
   .maisons{grid-template-columns:repeat(2,1fr);gap:12px}
+  .familles{grid-template-columns:repeat(2,1fr);gap:10px}
   .maison-logo{height:48px}
   .maison-logo img{max-height:48px}
   .titre{font-size:16.5px}
@@ -281,12 +291,14 @@ footer{background:var(--bois-nuit);color:var(--creme);padding:52px 0 26px;margin
   <div class="wrap bar">
     <div class="mark" id="mark">TORINO <em>NICHE</em></div>
     <nav>
-      <button class="nav-lien" id="nav-showroom">Notre showroom</button>
+      <button class="nav-btn" id="nav-showroom">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+        <span class="long">Notre showroom</span><span class="court">Showroom</span>
+      </button>
       <button class="nav-rdv" data-ouvrir-rdv><span class="long">Prendre rendez-vous</span><span class="court">Rendez-vous</span></button>
     </nav>
     <button class="panier-btn" id="ouvrir-panier" aria-label="Ouvrir le panier">
       <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-      <span class="panier-mot">Panier</span>
       <span class="pastille" id="pastille">0</span>
     </button>
   </div>
@@ -297,7 +309,7 @@ footer{background:var(--bois-nuit);color:var(--creme);padding:52px 0 26px;margin
     <div class="filet"></div>
     <div>
       <h1>Le parfum se choisit au nez</h1>
-      <p>Une sélection de parfums de niche disponible à la commande, ou à découvrir sur place au showroom, sur rendez-vous, tous les jours de 10h à 22h. Catalogue privé, Strasbourg.</p>
+      <p>Une sélection de parfums de niche disponible à la commande, ou à découvrir sur place au showroom, sur rendez-vous, tous les jours de 10h à 22h.</p>
       <div class="hero-actions">
         <button class="btn-plein" data-ouvrir-rdv>Prendre rendez-vous</button>
         <button class="btn-fin" id="hero-showroom">Découvrir le showroom</button>
@@ -328,6 +340,11 @@ footer{background:var(--bois-nuit);color:var(--creme);padding:52px 0 26px;margin
 
   <div id="vue-accueil" style="display:none">
     <div id="rubriques"></div>
+    <section class="section" id="section-familles" style="display:none">
+      <div class="section-tete"><h2>Par famille olfactive</h2></div>
+      <p class="compte" style="margin:-10px 0 18px">Vous savez ce que vous aimez sentir ? Partez de là.</p>
+      <div class="familles" id="grille-familles"></div>
+    </section>
     <section class="section">
       <div class="section-tete"><h2>Les maisons</h2></div>
       <div class="maisons" id="grille-maisons"></div>
@@ -512,7 +529,24 @@ const RUBRIQUES = [
   { cle:'recommande',titre:'La sélection du moment', etiq:'',               classe:'' }
 ];
 
-let PRODUITS = [], PANIER = [], MAISONS = [];
+// Familles olfactives. Le site lit la colonne Famille du Sheet et range
+// chaque parfum dans une ou plusieurs de ces catégories, d'après les mots
+// qu'elle contient. Pour ajouter un mot, il suffit de l'ajouter à la liste.
+const FAMILLES = [
+  { nom:'Floral',     mots:['floral','fleur','rose','jasmin','tubereuse','iris','muguet','pivoine','neroli','ylang','violette','lys','magnolia','freesia','gardenia','mimosa'] },
+  { nom:'Boisé',      mots:['bois','santal','cedre','vetiver','oud','patchouli','gaiac','cypres','cashmeran'] },
+  { nom:'Ambré',      mots:['ambre','ambree','oriental','benjoin','encens','myrrhe','labdanum','resine','baume'] },
+  { nom:'Gourmand',   mots:['gourmand','vanille','caramel','praline','chocolat','cafe','miel','amande','tonka','coco','sucre','pistache'] },
+  { nom:'Épicé',      mots:['epice','poivre','cannelle','safran','cardamome','gingembre','muscade','girofle','cumin'] },
+  { nom:'Agrumes',    mots:['agrume','hesperide','citron','bergamote','orange','mandarine','pamplemousse','yuzu','lime'] },
+  { nom:'Frais',      mots:['frais','fraiche','aquatique','marin','iode','menthe','aromatique','lavande','fougere','eucalyptus'] },
+  { nom:'Cuir & Tabac',mots:['cuir','tabac','fume','whisky','rhum','cigare'] },
+  { nom:'Musqué',     mots:['musc','poudre','coton','peau'] },
+  { nom:'Vert',       mots:['vert','verte','herbe','figue','the ','galbanum','feuille','foin'] }
+];
+const sansAcc = t => String(t).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+
+let PRODUITS = [], PANIER = [], MAISONS = [], FAMILLES_PRESENTES = [];
 let VUE = 'accueil', MAISON_ACTIVE = '', GENRE = '', FAMILLE = '', RECHERCHE = '';
 let RDV = { date:'', heure:'' };
 let CODE_OK = false;
@@ -589,6 +623,14 @@ async function charger(){
       blister: oui(valeur(c[14]))                             // O Blister
     };
   }).filter(p => p.nom);
+
+  // on range chaque parfum dans ses familles olfactives
+  PRODUITS.forEach(p => {
+    const t = sansAcc(p.famille + ' ' + p.genre + ' ' + p.nom);
+    p.fam = FAMILLES.filter(f => f.mots.some(m => t.includes(m))).map(f => f.nom);
+  });
+  FAMILLES_PRESENTES = FAMILLES.map(f => f.nom)
+    .filter(n => PRODUITS.some(p => p.fam.includes(n)));
 
   if (!PRODUITS.length){
     $('#chargement').textContent = 'Le catalogue est encore vide. Ajoutez une première ligne dans le Google Sheet.';
@@ -713,7 +755,27 @@ function rendreAccueil(){
     </button>`).join('');
 
   $$('#grille-maisons .maison-carte').forEach(b => b.onclick = () => ouvrirMaison(b.dataset.maison));
+
+  $('#section-familles').style.display = FAMILLES_PRESENTES.length ? 'block' : 'none';
+  $('#grille-familles').innerHTML = FAMILLES_PRESENTES.map(n => {
+    const nb = PRODUITS.filter(p => p.fam.includes(n)).length;
+    return `<button class="famille-carte" data-fam="${esc(n)}">
+      <div class="f-nom">${esc(n)}</div>
+      <div class="f-nb">${nb} parfum${nb > 1 ? 's' : ''}</div>
+      <div class="f-trait"></div>
+    </button>`;
+  }).join('');
+  $$('#grille-familles .famille-carte').forEach(b => b.onclick = () => ouvrirFamille(b.dataset.fam));
+
   brancherAjouts($('#rubriques'));
+}
+
+function ouvrirFamille(nom){
+  MAISON_ACTIVE = ''; GENRE = ''; FAMILLE = nom; RECHERCHE = ''; $('#q').value = '';
+  montrer('catalogue');
+  $('#cat-titre').textContent = nom;
+  rendreCatalogue();
+  window.scrollTo({ top: $('#vue-catalogue').offsetTop - 80, behavior:'smooth' });
 }
 
 function ouvrirMaison(nom){
@@ -729,8 +791,8 @@ function listeFiltree(){
   return PRODUITS.filter(p => {
     if (MAISON_ACTIVE && (p.maison || 'Autres') !== MAISON_ACTIVE) return false;
     if (GENRE && p.genre !== GENRE) return false;
-    if (FAMILLE && p.famille !== FAMILLE) return false;
-    if (RECHERCHE && !(p.nom+' '+p.maison+' '+p.famille).toLowerCase().includes(RECHERCHE)) return false;
+    if (FAMILLE && !p.fam.includes(FAMILLE)) return false;
+    if (RECHERCHE && !sansAcc(p.nom+' '+p.maison+' '+p.famille+' '+p.fam.join(' ')).includes(RECHERCHE)) return false;
     return true;
   }).sort((a,b) => (b.star - a.star) || a.maison.localeCompare(b.maison,'fr') || a.nom.localeCompare(b.nom,'fr'));
 }
@@ -747,11 +809,10 @@ function rendreChips(sel, valeurs, actif, poser){
 function rendreCatalogue(){
   const base = PRODUITS.filter(p => {
     if (MAISON_ACTIVE && (p.maison || 'Autres') !== MAISON_ACTIVE) return false;
-    if (RECHERCHE && !(p.nom+' '+p.maison+' '+p.famille).toLowerCase().includes(RECHERCHE)) return false;
+    if (RECHERCHE && !sansAcc(p.nom+' '+p.maison+' '+p.famille+' '+p.fam.join(' ')).includes(RECHERCHE)) return false;
     return true;
   });
-  // familles courtes seulement (une description longue ne fait pas un filtre utile)
-  const familles = [...new Set(base.map(p => p.famille).filter(f => f && f.length <= 24))];
+  const familles = FAMILLES_PRESENTES.filter(n => base.some(p => p.fam.includes(n)));
   rendreChips('#chips-famille', familles, FAMILLE, v => FAMILLE = v);
   rendreChips('#chips-genre', [...new Set(base.map(p => p.genre).filter(Boolean))], GENRE, v => GENRE = v);
 
@@ -788,7 +849,7 @@ function redessiner(){
 }
 
 $('#q').addEventListener('input', e => {
-  RECHERCHE = e.target.value.toLowerCase().trim();
+  RECHERCHE = sansAcc(e.target.value.trim());
   if (RECHERCHE){
     MAISON_ACTIVE = ''; GENRE = ''; FAMILLE = '';
     montrer('catalogue');
