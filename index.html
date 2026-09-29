@@ -10,231 +10,248 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Karla:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --chene-fonce:#2E2318;
-  --chene:#3A2D20;
-  --chene-clair:#4A3A29;
+  /* fond clair du site */
+  --fond:#F2E8DB;
+  --surface:#FBF5EC;
+  --encre:#2A1D14;
+  --encre-doux:rgba(42,29,20,.66);
+  --trait-clair:rgba(42,29,20,.14);
+  /* blocs foncés : cartes produits, bandeau d'accueil, pied de page */
+  --bois-nuit:#160F0A;
+  --bois:#211609;
+  --bois-clair:#2E2013;
+  --creme:#F3E6D8;
+  --creme-doux:rgba(243,230,216,.62);
+  --trait:rgba(224,194,166,.18);
+  --argile:#E0C2A6;
   --terre:#A8481F;
   --terre-vive:#C96A3C;
-  --argile:#E3C9AE;
-  --creme:#F5EADF;
-  --creme-doux:rgba(245,234,223,.66);
-  --trait:rgba(227,201,174,.20);
   --rouge:#C0392B;
   --r:4px;
   --max:1180px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  background:var(--chene-fonce);color:var(--creme);
-  font-family:'Karla',system-ui,sans-serif;font-size:16px;line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
+body{background:var(--fond);color:var(--encre);font-family:'Karla',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:400;line-height:1.1;letter-spacing:-.01em}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;font-size:inherit;color:inherit;background:none;border:none;cursor:pointer}
 img{display:block;max-width:100%}
-:focus-visible{outline:2px solid var(--terre-vive);outline-offset:3px}
+:focus-visible{outline:2px solid var(--terre);outline-offset:3px}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
 .ticker{background:var(--terre);color:#fff;font-size:13.5px;text-align:center;padding:9px 16px;min-height:38px;display:flex;align-items:center;justify-content:center}
 .ticker span{transition:opacity .45s}
 
-header{position:sticky;top:0;z-index:90;background:rgba(46,35,24,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--trait)}
-.bar{display:flex;align-items:center;gap:28px;height:68px}
+header{position:sticky;top:0;z-index:90;background:rgba(242,232,219,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--trait-clair)}
+.bar{display:flex;align-items:center;gap:20px;height:68px}
 .mark{font-family:'Fraunces',serif;font-size:23px;letter-spacing:.02em;white-space:nowrap;cursor:pointer}
-.mark em{font-style:normal;color:var(--terre-vive)}
-nav{margin-left:auto}
-.nav-rdv{border:1px solid var(--argile);color:var(--argile);padding:9px 17px;border-radius:var(--r);font-size:14.5px}
-.nav-rdv:hover{background:var(--argile);color:var(--chene-fonce)}
+.mark em{font-style:normal;color:var(--terre)}
+nav{margin-left:auto;display:flex;gap:10px;align-items:center}
+.nav-lien{color:var(--encre-doux);font-size:14.5px;padding:8px 4px;border-bottom:1px solid transparent}
+.nav-lien:hover{color:var(--encre);border-bottom-color:var(--terre)}
+.nav-rdv{border:1px solid var(--encre);color:var(--encre);padding:9px 17px;border-radius:var(--r);font-size:14.5px}
+.nav-rdv:hover{background:var(--encre);color:var(--surface)}
 .panier-btn{display:flex;align-items:center;gap:9px;background:var(--terre);color:#fff;padding:10px 18px;border-radius:var(--r);font-size:14.5px;font-weight:500}
 .panier-btn:hover{background:var(--terre-vive)}
 .pastille{background:#fff;color:var(--terre);border-radius:20px;min-width:20px;height:20px;font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;padding:0 5px}
 
-.hero{position:relative;padding:70px 0 58px;background:linear-gradient(180deg,rgba(168,72,31,.12),transparent 62%),var(--chene);border-bottom:1px solid var(--trait);overflow:hidden}
-.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(94deg,rgba(0,0,0,.16) 0 2px,transparent 2px 9px);opacity:.55;pointer-events:none}
+.hero{position:relative;padding:70px 0 62px;background:linear-gradient(180deg,rgba(168,72,31,.14),transparent 62%),var(--bois-nuit);color:var(--creme);overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(94deg,rgba(0,0,0,.22) 0 2px,transparent 2px 9px);opacity:.5;pointer-events:none}
 .hero .wrap{position:relative}
 .hero-grid{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:start}
-.filet{width:3px;background:linear-gradient(180deg,var(--terre-vive),transparent);border-radius:3px;align-self:stretch;min-height:150px}
+.filet{width:3px;background:linear-gradient(180deg,var(--terre-vive),transparent);border-radius:3px;align-self:stretch;min-height:140px}
 .hero h1{font-size:clamp(40px,7vw,74px);max-width:11ch}
-.hero h1 span{display:block;color:var(--argile);font-size:.42em;letter-spacing:.04em;margin-top:18px;font-family:'Karla',sans-serif}
-.hero p{margin-top:22px;max-width:46ch;color:var(--creme-doux);font-size:16.5px}
+.hero p{margin-top:24px;max-width:50ch;color:var(--creme-doux);font-size:16.5px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .btn-plein{background:var(--terre);color:#fff;padding:12px 22px;border-radius:var(--r);font-size:14.5px;font-weight:500}
 .btn-plein:hover{background:var(--terre-vive)}
 .btn-fin{border:1px solid var(--argile);color:var(--argile);padding:11px 20px;border-radius:var(--r);font-size:14.5px}
-.btn-fin:hover{background:var(--argile);color:var(--chene-fonce)}
+.btn-fin:hover{background:var(--argile);color:var(--bois)}
+.btn-sombre{border:1px solid var(--encre);color:var(--encre);padding:11px 20px;border-radius:var(--r);font-size:14.5px;display:inline-block}
+.btn-sombre:hover{background:var(--encre);color:var(--surface)}
 
 .outils{padding:34px 0 6px}
 .ligne-outils{display:flex;gap:12px;align-items:stretch;flex-wrap:wrap}
 .recherche{position:relative;flex:1;min-width:240px;max-width:520px}
-.recherche input{width:100%;background:var(--chene);border:1px solid var(--trait);color:var(--creme);padding:14px 16px 14px 44px;border-radius:var(--r);font-size:15px}
-.recherche input::placeholder{color:rgba(245,234,223,.45)}
-.recherche svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);opacity:.45}
+.recherche input{width:100%;background:var(--surface);border:1px solid var(--trait-clair);color:var(--encre);padding:14px 16px 14px 44px;border-radius:var(--r);font-size:15px}
+.recherche input::placeholder{color:rgba(42,29,20,.45)}
+.recherche svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);opacity:.5}
 .bloc-code{display:flex;gap:8px}
-.bloc-code input{width:130px;background:var(--chene);border:1px solid var(--trait);color:var(--creme);padding:14px;border-radius:var(--r);font-size:15px;font-family:inherit}
-.bloc-code input::placeholder{color:rgba(245,234,223,.45)}
-.bloc-code button{border:1px solid var(--argile);color:var(--argile);padding:0 18px;border-radius:var(--r);font-size:14.5px;white-space:nowrap}
-.bloc-code button:hover{background:var(--argile);color:var(--chene-fonce)}
-.code-actif{margin-top:12px;font-size:13.5px;color:var(--argile);background:rgba(168,72,31,.16);border-left:2px solid var(--terre);padding:9px 13px;border-radius:3px}
-.code-actif button{text-decoration:underline;font-size:13px;color:var(--creme-doux);margin-left:8px}
-.code-actif button:hover{color:var(--creme)}
+.bloc-code input{width:130px;background:var(--surface);border:1px solid var(--trait-clair);color:var(--encre);padding:14px;border-radius:var(--r);font-size:15px;font-family:inherit}
+.bloc-code input::placeholder{color:rgba(42,29,20,.45)}
+.bloc-code button{border:1px solid var(--encre);color:var(--encre);padding:0 18px;border-radius:var(--r);font-size:14.5px;white-space:nowrap}
+.bloc-code button:hover{background:var(--encre);color:var(--surface)}
+.code-actif{margin-top:12px;font-size:13.5px;color:var(--encre);background:rgba(168,72,31,.10);border-left:2px solid var(--terre);padding:9px 13px;border-radius:3px}
+.code-actif button{text-decoration:underline;font-size:13px;color:var(--encre-doux);margin-left:8px}
 
 .section{padding:44px 0 0}
 .section-tete{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:20px}
 .section-tete h2{font-size:clamp(24px,3.4vw,32px)}
-.section-tete a{font-size:13.5px;color:var(--creme-doux);border-bottom:1px solid transparent}
-.section-tete a:hover{color:var(--creme);border-bottom-color:var(--terre-vive)}
 .rang{display:grid;gap:20px;grid-template-columns:repeat(4,1fr)}
 .grille{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));padding:24px 0 0}
 
-.carte{background:var(--chene);border:1px solid var(--trait);border-radius:var(--r);display:flex;flex-direction:column;overflow:hidden}
-.visuel{position:relative;aspect-ratio:3/4;background:var(--chene-clair);display:flex;align-items:center;justify-content:center;overflow:hidden}
+/* carte produit, volontairement foncée */
+.carte{background:var(--bois);border-radius:var(--r);display:flex;flex-direction:column;overflow:hidden;color:var(--creme)}
+.visuel{position:relative;aspect-ratio:3/4;background:var(--bois-clair);display:flex;align-items:center;justify-content:center;overflow:hidden}
 .visuel img{width:100%;height:100%;object-fit:cover}
-.mono{font-family:'Fraunces',serif;font-size:52px;color:rgba(227,201,174,.24)}
+.mono{font-family:'Fraunces',serif;font-size:52px;color:rgba(224,194,166,.22)}
 .etiq{position:absolute;top:10px;left:10px;color:#fff;font-size:10.5px;font-weight:700;padding:4px 9px;border-radius:3px;letter-spacing:.04em}
 .etiq.bs{background:var(--rouge)}
 .etiq.nv{background:var(--terre)}
-.etiq.dp{background:#241a11}
-.epuise{position:absolute;inset:0;background:rgba(46,35,24,.76);display:flex;align-items:center;justify-content:center;color:var(--argile);font-size:14px}
+.etiq.dp{background:#0B0704;border:1px solid var(--trait)}
+.epuise{position:absolute;inset:0;background:rgba(22,15,10,.74);display:flex;align-items:center;justify-content:center;color:var(--argile);font-size:14px}
 .infos{padding:15px 15px 17px;display:flex;flex-direction:column;flex:1;gap:5px}
 .maison{font-size:12.5px;color:var(--terre-vive);letter-spacing:.04em}
 .titre{font-family:'Fraunces',serif;font-size:19px;line-height:1.25}
 .detail{font-size:13px;color:var(--creme-doux)}
-.blister{font-size:11.5px;color:var(--argile);border:1px solid var(--trait);border-radius:20px;padding:2px 9px;align-self:flex-start;margin-top:2px}
-.prix{margin-top:auto;padding-top:12px;display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.blister{font-size:11.5px;color:var(--argile);border:1px solid var(--trait);border-radius:20px;padding:2px 9px;align-self:flex-start;margin-top:3px}
+.bas{margin-top:auto;padding-top:12px}
+.prix{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
 .prix b{font-size:20px;font-weight:500;font-family:'Fraunces',serif}
 .barre{color:var(--rouge);text-decoration:line-through;font-size:13.5px}
+.famille{font-size:12.5px;color:var(--creme-doux);line-height:1.45;margin-top:7px}
 .ajout{margin-top:12px;background:var(--terre);color:#fff;padding:10px;border-radius:var(--r);font-size:14px;font-weight:500;width:100%}
 .ajout:hover{background:var(--terre-vive)}
-.ajout[disabled]{background:var(--chene-clair);color:var(--creme-doux);cursor:not-allowed}
+.ajout[disabled]{background:var(--bois-clair);color:var(--creme-doux);cursor:not-allowed}
 
-/* maisons */
+/* cartes maisons, claires pour que les logos ressortent */
 .maisons{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));padding-top:4px}
-.maison-carte{background:var(--chene);border:1px solid var(--trait);border-radius:var(--r);padding:22px 16px;text-align:center;transition:border-color .2s}
-.maison-carte:hover{border-color:var(--argile)}
+.maison-carte{background:var(--surface);border:1px solid var(--trait-clair);border-radius:var(--r);padding:22px 16px;text-align:center;color:var(--encre);transition:border-color .2s}
+.maison-carte:hover{border-color:var(--encre)}
 .maison-logo{height:62px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
 .maison-logo img{max-height:62px;max-width:100%;object-fit:contain}
-.maison-logo .init{font-family:'Fraunces',serif;font-size:30px;color:var(--argile);letter-spacing:.06em}
+.maison-logo .init{font-family:'Fraunces',serif;font-size:30px;color:var(--terre);letter-spacing:.06em}
 .maison-nom{font-family:'Fraunces',serif;font-size:17px;line-height:1.2}
-.maison-nb{font-size:12.5px;color:var(--creme-doux);margin-top:5px}
+.maison-nb{font-size:12.5px;color:var(--encre-doux);margin-top:5px}
 
-.retour{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--creme-doux);margin-bottom:18px}
-.retour:hover{color:var(--creme)}
+.retour{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--encre-doux);margin-bottom:18px}
+.retour:hover{color:var(--encre)}
 .cat-tete{padding-top:34px}
 .cat-tete h2{font-size:clamp(26px,4vw,38px)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.chip{border:1px solid var(--trait);color:var(--creme-doux);padding:7px 14px;border-radius:20px;font-size:13.5px}
-.chip:hover{border-color:var(--argile);color:var(--creme)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{border:1px solid var(--trait-clair);color:var(--encre-doux);padding:7px 14px;border-radius:20px;font-size:13.5px;background:var(--surface)}
+.chip:hover{border-color:var(--encre);color:var(--encre)}
 .chip.on{background:var(--terre);border-color:var(--terre);color:#fff}
-.compte{margin-top:16px;font-size:13.5px;color:var(--creme-doux)}
+.compte{margin-top:16px;font-size:13.5px;color:var(--encre-doux)}
 
-.vide{padding:56px 20px;text-align:center;border:1px dashed var(--trait);border-radius:var(--r);grid-column:1/-1}
+.vide{padding:56px 20px;text-align:center;border:1px dashed var(--trait-clair);border-radius:var(--r);grid-column:1/-1}
 .vide h3{font-size:22px;margin-bottom:10px}
-.vide p{color:var(--creme-doux);max-width:44ch;margin:0 auto 20px}
-.mention{grid-column:1/-1;background:var(--chene);border-left:2px solid var(--terre);padding:18px 20px;border-radius:var(--r)}
-.mention p{font-size:14.5px;color:var(--argile)}
-.mention small{display:block;margin-top:8px;font-size:11.5px;color:rgba(245,234,223,.48);line-height:1.5}
-.charge{text-align:center;padding:70px 0;color:var(--creme-doux)}
+.vide p{color:var(--encre-doux);max-width:44ch;margin:0 auto 20px}
+.mention{grid-column:1/-1;background:var(--surface);border-left:2px solid var(--terre);padding:18px 20px;border-radius:var(--r)}
+.mention p{font-size:14.5px;color:var(--encre)}
+.mention small{display:block;margin-top:8px;font-size:11.5px;color:var(--encre-doux);line-height:1.5}
+.charge{text-align:center;padding:70px 0;color:var(--encre-doux)}
+
+/* page showroom */
+.showroom{padding:40px 0 0}
+.showroom h2{font-size:clamp(28px,4.4vw,42px);margin-bottom:8px}
+.showroom .accroche{color:var(--encre-doux);font-size:16.5px;max-width:52ch;margin-bottom:28px}
+.sr-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:34px}
+.sr-bloc{background:var(--surface);border:1px solid var(--trait-clair);border-radius:var(--r);padding:22px}
+.sr-bloc h3{font-family:'Karla',sans-serif;font-size:13px;font-weight:700;color:var(--terre);margin-bottom:9px}
+.sr-bloc p{font-size:14.5px;color:var(--encre-doux);margin-bottom:8px}
+.galerie{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.galerie figure{border-radius:var(--r);overflow:hidden;background:var(--bois-clair);aspect-ratio:1}
+.galerie img{width:100%;height:100%;object-fit:cover}
+.galerie-vide{border:1px dashed var(--trait-clair);border-radius:var(--r);padding:34px 20px;text-align:center;color:var(--encre-doux);font-size:14.5px}
+.insta-lien{display:inline-block;margin-top:18px}
+.insta-embeds{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));margin-top:16px}
+.insta-embeds blockquote{margin:0!important;min-width:0!important;width:100%!important}
 
 /* panier */
-.voile{position:fixed;inset:0;background:rgba(16,11,6,.66);z-index:98;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s,visibility .25s}
+.voile{position:fixed;inset:0;background:rgba(22,15,10,.5);z-index:98;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s,visibility .25s}
 .voile.on{opacity:1;visibility:visible;pointer-events:auto}
-.tiroir{position:fixed;top:0;right:0;bottom:0;width:min(430px,100%);background:var(--chene);border-left:1px solid var(--trait);z-index:99;transform:translateX(102%);transition:transform .3s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column}
+.tiroir{position:fixed;top:0;right:0;bottom:0;width:min(430px,100%);background:var(--surface);color:var(--encre);border-left:1px solid var(--trait-clair);z-index:99;transform:translateX(102%);transition:transform .3s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column}
 .tiroir.on{transform:none}
-.tiroir-tete{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid var(--trait)}
+.tiroir-tete{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid var(--trait-clair)}
 .tiroir-tete h2{font-size:22px}
-.fermer{font-size:26px;line-height:1;color:var(--creme-doux);padding:4px 8px}
-.fermer:hover{color:var(--creme)}
+.fermer{font-size:26px;line-height:1;color:var(--encre-doux);padding:4px 8px}
+.fermer:hover{color:var(--encre)}
 .tiroir-corps{flex:1;overflow-y:auto;padding:20px 22px}
-.ligne{display:flex;gap:13px;padding:14px 0;border-bottom:1px solid var(--trait)}
-.ligne img,.ligne .ph{width:58px;height:74px;object-fit:cover;border-radius:3px;background:var(--chene-clair);flex:none}
+.ligne{display:flex;gap:13px;padding:14px 0;border-bottom:1px solid var(--trait-clair)}
+.ligne img,.ligne .ph{width:58px;height:74px;object-fit:cover;border-radius:3px;background:var(--bois-clair);flex:none}
 .ligne-txt{flex:1;min-width:0}
 .ligne-txt .n{font-family:'Fraunces',serif;font-size:16px}
-.ligne-txt .m{font-size:12.5px;color:var(--creme-doux)}
+.ligne-txt .m{font-size:12.5px;color:var(--encre-doux)}
 .qte{display:flex;align-items:center;gap:10px;margin-top:8px}
-.qte button{width:26px;height:26px;border:1px solid var(--trait);border-radius:3px;display:flex;align-items:center;justify-content:center;color:var(--creme-doux)}
-.qte button:hover{border-color:var(--argile);color:var(--creme)}
+.qte button{width:26px;height:26px;border:1px solid var(--trait-clair);border-radius:3px;display:flex;align-items:center;justify-content:center;color:var(--encre-doux)}
+.qte button:hover{border-color:var(--encre);color:var(--encre)}
 .qte span{font-size:14px;min-width:16px;text-align:center}
-.retirer{font-size:12.5px;color:var(--creme-doux);text-decoration:underline;margin-left:auto;align-self:flex-start}
+.retirer{font-size:12.5px;color:var(--encre-doux);text-decoration:underline;margin-left:auto;align-self:flex-start}
 .retirer:hover{color:var(--rouge)}
-.panier-vide{text-align:center;padding:50px 10px;color:var(--creme-doux)}
-.vers-rdv{margin-top:20px;border:1px solid var(--trait);border-radius:var(--r);padding:14px;text-align:left;width:100%;font-size:13.5px;color:var(--creme-doux);line-height:1.4}
-.vers-rdv:hover{border-color:var(--argile)}
-.vers-rdv b{display:block;font-weight:500;font-size:14.5px;color:var(--creme);margin-bottom:3px}
-.tiroir-pied{border-top:1px solid var(--trait);padding:18px 22px}
+.panier-vide{text-align:center;padding:50px 10px;color:var(--encre-doux)}
+.vers-rdv{margin-top:20px;border:1px solid var(--trait-clair);border-radius:var(--r);padding:14px;text-align:left;width:100%;font-size:13.5px;color:var(--encre-doux);line-height:1.4}
+.vers-rdv:hover{border-color:var(--encre)}
+.vers-rdv b{display:block;font-weight:500;font-size:14.5px;color:var(--encre);margin-bottom:3px}
+.tiroir-pied{border-top:1px solid var(--trait-clair);padding:18px 22px}
 .total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
-.total span{font-size:14px;color:var(--creme-doux)}
+.total span{font-size:14px;color:var(--encre-doux)}
 .total b{font-family:'Fraunces',serif;font-size:25px;font-weight:400}
-.cgv{font-size:11.5px;color:rgba(245,234,223,.52);line-height:1.5;margin-bottom:14px}
+.cgv{font-size:11.5px;color:var(--encre-doux);line-height:1.5;margin-bottom:14px}
 .valider{width:100%;background:var(--terre);color:#fff;padding:15px;border-radius:var(--r);font-size:15.5px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:10px}
 .valider:hover{background:var(--terre-vive)}
-.valider[disabled]{background:var(--chene-clair);color:var(--creme-doux);cursor:not-allowed}
+.valider[disabled]{background:rgba(42,29,20,.12);color:var(--encre-doux);cursor:not-allowed}
 
-/* page rendez-vous */
-.page{position:fixed;inset:0;z-index:105;display:none;align-items:flex-start;justify-content:center;padding:36px 20px;overflow-y:auto;background:rgba(16,11,6,.8)}
-.page.on{display:flex}
-.page-boite{background:var(--chene);border:1px solid var(--trait);border-radius:var(--r);max-width:600px;width:100%;padding:30px}
+/* fenêtres */
+.page,.fiche{position:fixed;inset:0;z-index:105;display:none;align-items:flex-start;justify-content:center;padding:36px 20px;overflow-y:auto;background:rgba(22,15,10,.55)}
+.page.on,.fiche.on{display:flex}
+.page-boite,.fiche-boite{background:var(--surface);color:var(--encre);border:1px solid var(--trait-clair);border-radius:var(--r);max-width:600px;width:100%;padding:30px}
+.fiche-boite{max-width:640px;padding:34px}
 .page-tete{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:18px}
 .page-tete h2{font-size:29px}
-.page-sous{font-size:14px;color:var(--creme-doux);margin-top:5px}
-.regle{font-size:13.5px;color:var(--argile);background:rgba(168,72,31,.16);border-radius:3px;padding:11px 13px;line-height:1.5}
+.page-sous{font-size:14px;color:var(--encre-doux);margin-top:5px}
+.fiche-boite h2{font-size:27px;margin-bottom:18px}
+.fiche-boite h3{font-family:'Karla',sans-serif;font-size:14px;font-weight:700;color:var(--terre);margin:20px 0 7px}
+.fiche-boite p{font-size:15px;color:var(--encre-doux);margin-bottom:9px}
+.regle{font-size:13.5px;color:var(--encre);background:rgba(168,72,31,.10);border-radius:3px;padding:11px 13px;line-height:1.5}
 .etape{margin:22px 0}
-.etape h3{font-family:'Karla',sans-serif;font-size:13px;font-weight:700;color:var(--terre-vive);margin-bottom:10px}
-.etape input{width:100%;background:var(--chene-clair);border:1px solid var(--trait);color:var(--creme);padding:12px 13px;border-radius:var(--r);font-size:15px;font-family:inherit}
-.etape input::placeholder{color:rgba(245,234,223,.45)}
-.rdv-item{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--trait);font-size:14.5px}
+.etape h3{font-family:'Karla',sans-serif;font-size:13px;font-weight:700;color:var(--terre);margin-bottom:10px}
+.etape input{width:100%;background:var(--fond);border:1px solid var(--trait-clair);color:var(--encre);padding:12px 13px;border-radius:var(--r);font-size:15px;font-family:inherit}
+.rdv-item{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--trait-clair);font-size:14.5px}
 .rdv-item:last-of-type{border-bottom:none}
-.rdv-item span{color:var(--creme-doux)}
-.rdv-total{display:flex;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1px solid var(--trait)}
+.rdv-item span{color:var(--encre-doux)}
+.rdv-total{display:flex;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1px solid var(--trait-clair)}
 .rdv-total b{font-family:'Fraunces',serif;font-size:21px;font-weight:400}
-.rdv-manque{border:1px dashed var(--trait);border-radius:var(--r);padding:18px;text-align:center;font-size:14.5px;color:var(--creme-doux)}
-.rdv-manque button{color:var(--terre-vive);text-decoration:underline;margin-top:8px;display:block;width:100%}
+.rdv-manque{border:1px dashed var(--trait-clair);border-radius:var(--r);padding:18px;text-align:center;font-size:14.5px;color:var(--encre-doux)}
+.rdv-manque button{color:var(--terre);text-decoration:underline;margin-top:8px;display:block;width:100%}
 
-.cal{border:1px solid var(--trait);border-radius:var(--r);padding:12px}
+.cal{border:1px solid var(--trait-clair);border-radius:var(--r);padding:12px}
 .cal-tete{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
 .cal-tete span{font-size:14.5px}
-.cal-tete button{width:28px;height:28px;border:1px solid var(--trait);border-radius:3px;color:var(--creme-doux);font-size:16px;line-height:1}
-.cal-tete button:hover:not([disabled]){border-color:var(--argile);color:var(--creme)}
-.cal-tete button[disabled]{opacity:.25;cursor:not-allowed}
+.cal-tete button{width:28px;height:28px;border:1px solid var(--trait-clair);border-radius:3px;color:var(--encre-doux);font-size:16px;line-height:1}
+.cal-tete button:hover:not([disabled]){border-color:var(--encre);color:var(--encre)}
+.cal-tete button[disabled]{opacity:.3;cursor:not-allowed}
 .cal-jours,.cal-grille{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
-.cal-jours span{text-align:center;font-size:11px;color:rgba(245,234,223,.48);padding-bottom:4px}
-.cal-grille button{aspect-ratio:1;border:1px solid transparent;border-radius:3px;font-size:13.5px;color:var(--creme);display:flex;align-items:center;justify-content:center}
-.cal-grille button:hover:not([disabled]){border-color:var(--argile)}
+.cal-jours span{text-align:center;font-size:11px;color:var(--encre-doux);padding-bottom:4px}
+.cal-grille button{aspect-ratio:1;border:1px solid transparent;border-radius:3px;font-size:13.5px;display:flex;align-items:center;justify-content:center}
+.cal-grille button:hover:not([disabled]){border-color:var(--encre)}
 .cal-grille button.on{background:var(--terre);color:#fff}
-.cal-grille button[disabled]{color:rgba(245,234,223,.24);cursor:not-allowed}
+.cal-grille button[disabled]{color:rgba(42,29,20,.25);cursor:not-allowed}
 .creneaux{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));gap:7px;max-height:180px;overflow-y:auto}
-.creneau{border:1px solid var(--trait);border-radius:3px;padding:8px 4px;font-size:13.5px;color:var(--creme-doux);text-align:center}
-.creneau:hover{border-color:var(--argile);color:var(--creme)}
+.creneau{border:1px solid var(--trait-clair);border-radius:3px;padding:8px 4px;font-size:13.5px;color:var(--encre-doux);text-align:center}
+.creneau:hover{border-color:var(--encre);color:var(--encre)}
 .creneau.on{background:var(--terre);border-color:var(--terre);color:#fff}
-.creneau[disabled]{opacity:.3;cursor:not-allowed}
+.creneau[disabled]{opacity:.35;cursor:not-allowed}
 
-.fiche{position:fixed;inset:0;z-index:100;display:none;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto;background:rgba(16,11,6,.75)}
-.fiche.on{display:flex}
-.fiche-boite{background:var(--chene);border:1px solid var(--trait);border-radius:var(--r);max-width:640px;width:100%;padding:34px}
-.fiche-boite h2{font-size:27px;margin-bottom:18px}
-.fiche-boite h3{font-family:'Karla',sans-serif;font-size:14px;font-weight:700;color:var(--terre-vive);margin:20px 0 7px}
-.fiche-boite p{font-size:15px;color:var(--creme-doux);margin-bottom:9px}
-
-footer{background:var(--chene);border-top:1px solid var(--trait);padding:52px 0 26px;margin-top:70px}
+footer{background:var(--bois-nuit);color:var(--creme);padding:52px 0 26px;margin-top:70px}
 .pied{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:34px}
 .pied h4{font-family:'Karla',sans-serif;font-size:13px;font-weight:700;color:var(--terre-vive);margin-bottom:12px}
 .pied a,.pied p{display:block;font-size:14px;color:var(--creme-doux);margin-bottom:8px}
 .pied a:hover{color:var(--creme)}
 .pied-mark{font-family:'Fraunces',serif;font-size:22px;color:var(--creme);margin-bottom:10px}
-.pied-bas{margin-top:38px;padding-top:18px;border-top:1px solid var(--trait);font-size:12.5px;color:rgba(245,234,223,.45)}
+.pied-bas{margin-top:38px;padding-top:18px;border-top:1px solid var(--trait);font-size:12.5px;color:rgba(243,230,216,.45)}
 
-.notif{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:var(--chene-clair);border:1px solid var(--terre);color:var(--creme);padding:13px 20px;border-radius:var(--r);font-size:14px;z-index:120;opacity:0;visibility:hidden;transition:all .25s;max-width:calc(100% - 32px);text-align:center}
+.notif{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:var(--bois);border:1px solid var(--terre);color:var(--creme);padding:13px 20px;border-radius:var(--r);font-size:14px;z-index:120;opacity:0;visibility:hidden;transition:all .25s;max-width:calc(100% - 32px);text-align:center}
 .notif.on{opacity:1;visibility:visible;transform:translate(-50%,0)}
 
-@media(max-width:900px){
-  .rang{grid-template-columns:repeat(2,1fr)}
-}
+@media(max-width:900px){.rang{grid-template-columns:repeat(2,1fr)}.sr-grid{grid-template-columns:1fr}}
 @media(max-width:760px){
-  .bar{gap:12px}
+  .bar{gap:10px}
+  .nav-lien{display:none}
   .nav-rdv{padding:9px 12px;font-size:13.5px}
   .panier-btn{padding:9px 14px}
-  .hero{padding:50px 0 42px}
+  .hero{padding:50px 0 44px}
   .hero-grid{grid-template-columns:1fr;gap:20px}
   .filet{width:100%;height:3px;min-height:0;background:linear-gradient(90deg,var(--terre-vive),transparent)}
   .rang,.grille{gap:14px}
@@ -244,8 +261,8 @@ footer{background:var(--chene);border-top:1px solid var(--trait);padding:52px 0 
   .maison-logo img{max-height:48px}
   .titre{font-size:16.5px}
   .pied{grid-template-columns:1fr;gap:26px}
-  .fiche,.page{padding:16px}
-  .fiche-boite,.page-boite{padding:24px}
+  .page,.fiche{padding:16px}
+  .page-boite,.fiche-boite{padding:24px}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
 </style>
@@ -257,7 +274,10 @@ footer{background:var(--chene);border-top:1px solid var(--trait);padding:52px 0 
 <header>
   <div class="wrap bar">
     <div class="mark" id="mark">TORINO <em>NICHE</em></div>
-    <nav><button class="nav-rdv" data-ouvrir-rdv>Prendre rendez-vous</button></nav>
+    <nav>
+      <button class="nav-lien" id="nav-showroom">Notre showroom</button>
+      <button class="nav-rdv" data-ouvrir-rdv>Prendre rendez-vous</button>
+    </nav>
     <button class="panier-btn" id="ouvrir-panier">Panier <span class="pastille" id="pastille">0</span></button>
   </div>
 </header>
@@ -266,18 +286,18 @@ footer{background:var(--chene);border-top:1px solid var(--trait);padding:52px 0 
   <div class="wrap hero-grid">
     <div class="filet"></div>
     <div>
-      <h1>Le parfum se choisit au nez<span>Catalogue privé, Strasbourg</span></h1>
-      <p>Une sélection de parfums de niche disponible à la commande, ou à découvrir sur place au showroom, sur rendez-vous, tous les jours de 10h à 22h.</p>
+      <h1>Le parfum se choisit au nez</h1>
+      <p>Une sélection de parfums de niche disponible à la commande, ou à découvrir sur place au showroom, sur rendez-vous, tous les jours de 10h à 22h. Catalogue privé, Strasbourg.</p>
       <div class="hero-actions">
         <button class="btn-plein" data-ouvrir-rdv>Prendre rendez-vous</button>
-        <button class="btn-fin" data-fiche="showroom">Comment se passe une visite</button>
+        <button class="btn-fin" id="hero-showroom">Découvrir le showroom</button>
       </div>
     </div>
   </div>
 </section>
 
 <main class="wrap">
-  <div class="outils">
+  <div class="outils" id="outils">
     <div class="ligne-outils">
       <div class="recherche">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
@@ -314,6 +334,33 @@ footer{background:var(--chene);border-top:1px solid var(--trait);padding:52px 0 
     </div>
     <div class="grille" id="grille"></div>
   </div>
+
+  <div id="vue-showroom" style="display:none">
+    <div class="showroom">
+      <button class="retour" id="retour-showroom">&lsaquo; Retour au catalogue</button>
+      <h2>Notre showroom</h2>
+      <p class="accroche">Un lieu privé à Strasbourg, sans vitrine, où l'on prend le temps de sentir, comparer et choisir. L'adresse exacte est communiquée par WhatsApp une fois le créneau confirmé.</p>
+
+      <div class="sr-grid">
+        <div class="sr-bloc">
+          <h3>Sur rendez-vous</h3>
+          <p>Tous les jours, du lundi au dimanche, de 10h à 22h. Les créneaux se réservent au moins deux heures à l'avance.</p>
+          <p>La visite est un accompagnement, elle se conclut par l'achat d'au moins un parfum.</p>
+        </div>
+        <div class="sr-bloc">
+          <h3>Ce qui est prévu</h3>
+          <p>Un échantillon offert pour l'achat d'un parfum, selon les disponibilités.</p>
+          <p>Le catalogue complet est disponible sur place, y compris les pièces qui n'apparaissent pas en ligne.</p>
+        </div>
+      </div>
+
+      <div class="section-tete"><h2 style="font-size:clamp(22px,3vw,28px)">En images</h2></div>
+      <div id="galerie"></div>
+      <div id="insta-zone"></div>
+
+      <p style="margin-top:28px"><button class="btn-sombre" data-ouvrir-rdv>Prendre rendez-vous</button></p>
+    </div>
+  </div>
 </main>
 
 <footer>
@@ -331,6 +378,7 @@ footer{background:var(--chene);border-top:1px solid var(--trait);padding:52px 0 
       </div>
       <div>
         <h4>Showroom</h4>
+        <a href="#" id="pied-showroom">Notre showroom</a>
         <a href="#" data-ouvrir-rdv>Prendre rendez-vous</a>
         <p>Strasbourg, adresse communiquée après confirmation</p>
         <p>Tous les jours, 10h – 22h</p>
@@ -423,10 +471,21 @@ footer{background:var(--chene);border-top:1px solid var(--trait);padding:52px 0 
 const CONFIG = {
   NOM_BOUTIQUE : 'TORINO NICHE',
   SHEET_ID     : '1-QqjwquYNvA3C9pyc7VH_wFxveMefuUAWNQCu-PzWf0',
-  SHEET_NAME   : 'Catalogue',        // nom exact de l'onglet
-  WA_NUMERO    : '33626736000',      // +33 6 26 73 60 00
+  SHEET_NAME   : 'Catalogue',
+  WA_NUMERO    : '33626736000',
   WA_SECOURS   : 'https://wa.me/message/P6HN77WSSKMEE1',
   CODE_PROMO   : 'Torino67'
+};
+
+// Page showroom. Remplir l'un ou l'autre, ou les deux.
+const SHOWROOM = {
+  instagram : 'torinoniche',   // pseudo sans @
+  photos    : [],              // adresses d'images hébergées ailleurs
+  posts     : [                // liens de publications Instagram publiques
+    'https://www.instagram.com/p/DcwY8hDM70n/',
+    'https://www.instagram.com/p/DcwY05cMhaO/',
+    'https://www.instagram.com/p/DcwZEZzM2JL/'
+  ]
 };
 /* ===================================================================== */
 
@@ -496,28 +555,28 @@ const nombre = v => { const n = parseFloat(String(v).replace(/[^\d.,-]/g,'').rep
 async function charger(){
   const table = await lireSheet();
   if (!table){
-    $('#chargement').innerHTML = 'Catalogue indisponible. Vérifiez que le Google Sheet est partagé en lecture à toute personne disposant du lien, et que l\'onglet s\'appelle bien « '+esc(CONFIG.SHEET_NAME)+' ».';
+    $('#chargement').textContent = 'Catalogue indisponible. Vérifiez que le Google Sheet est partagé en lecture à toute personne disposant du lien, et que l\'onglet s\'appelle bien « '+CONFIG.SHEET_NAME+' ».';
     return;
   }
   PRODUITS = (table.rows || []).map((r,i) => {
     const c = r.c || [];
     return {
       id:'p'+i,
-      nom: valeur(c[0]),              // A  Nom
-      maison: valeur(c[1]),           // B  Marque
-      prix: nombre(valeur(c[2])),     // C  Prix
-      volume: valeur(c[3]),           // D  Volume
-      dispo: valeur(c[4]) === '' ? true : oui(valeur(c[4])),  // E  Disponible
-      genre: valeur(c[5]),            // F  Genre
-      photo: valeur(c[6]),            // G  Photo
-      logo: valeur(c[7]),             // H  Logo_Marque
-      star: oui(valeur(c[8])),        // I  Best_Seller
-      prixBoutique: nombre(valeur(c[9])), // J  Prix_Boutique
-      famille: valeur(c[10]),         // K  Famille
-      recommande: oui(valeur(c[11])), // L  Recommande
-      derniere: oui(valeur(c[12])),   // M  Derniere_Piece
-      nouveau: oui(valeur(c[13])),    // N  Nouveau_Arrivage
-      blister: oui(valeur(c[14]))     // O  Blister
+      nom: valeur(c[0]),                                      // A Nom
+      maison: valeur(c[1]),                                   // B Marque
+      prix: nombre(valeur(c[2])),                             // C Prix
+      volume: valeur(c[3]),                                   // D Volume
+      dispo: valeur(c[4]) === '' ? true : oui(valeur(c[4])),  // E Disponible
+      genre: valeur(c[5]),                                    // F Genre
+      photo: valeur(c[6]),                                    // G Photo
+      logo: valeur(c[7]),                                     // H Logo_Marque
+      star: oui(valeur(c[8])),                                // I Best_Seller
+      prixBoutique: nombre(valeur(c[9])),                     // J Prix_Boutique
+      famille: valeur(c[10]),                                 // K Famille (description)
+      recommande: oui(valeur(c[11])),                         // L Recommande
+      derniere: oui(valeur(c[12])),                           // M Derniere_Piece
+      nouveau: oui(valeur(c[13])),                            // N Nouveau_Arrivage
+      blister: oui(valeur(c[14]))                             // O Blister
     };
   }).filter(p => p.nom);
 
@@ -578,7 +637,7 @@ function carte(p, etiq, classe){
   const initiale = esc((p.nom[0] || '·').toUpperCase());
   const visuel = `<div class="mono">${initiale}</div>`
     + (p.photo ? `<img src="${esc(p.photo)}" alt="${esc(p.nom)}" loading="lazy" style="position:absolute;inset:0" onerror="this.remove()">` : '');
-  const detail = [p.volume, p.genre, p.famille].filter(Boolean).join(' / ');
+  const format = [p.volume, p.genre].filter(Boolean).join(' / ');
   return `<article class="carte">
     <div class="visuel">
       ${visuel}
@@ -588,13 +647,16 @@ function carte(p, etiq, classe){
     <div class="infos">
       ${p.maison ? `<div class="maison">${esc(p.maison)}</div>` : ''}
       <div class="titre">${esc(p.nom)}</div>
-      ${detail ? `<div class="detail">${esc(detail)}</div>` : ''}
+      ${format ? `<div class="detail">${esc(format)}</div>` : ''}
       ${p.blister ? '<div class="blister">Sous blister</div>' : ''}
-      <div class="prix">
-        ${aff.barre ? `<span class="barre">${euro(aff.barre)}</span>` : ''}
-        <b>${aff.prix > 0 ? euro(aff.prix) : 'Prix sur demande'}</b>
+      <div class="bas">
+        <div class="prix">
+          ${aff.barre ? `<span class="barre">${euro(aff.barre)}</span>` : ''}
+          <b>${aff.prix > 0 ? euro(aff.prix) : 'Prix sur demande'}</b>
+        </div>
+        ${p.famille ? `<div class="famille">${esc(p.famille)}</div>` : ''}
+        <button class="ajout" data-id="${p.id}" ${p.dispo ? '' : 'disabled'}>${p.dispo ? 'Ajouter' : 'Indisponible'}</button>
       </div>
-      <button class="ajout" data-id="${p.id}" ${p.dispo ? '' : 'disabled'}>${p.dispo ? 'Ajouter' : 'Indisponible'}</button>
     </div>
   </article>`;
 }
@@ -602,12 +664,19 @@ function brancherAjouts(racine){
   racine.querySelectorAll('.ajout:not([disabled])').forEach(b => b.onclick = () => ajouter(b.dataset.id));
 }
 
-/* ---------- vue accueil ---------- */
+/* ---------- vues ---------- */
+function montrer(vue){
+  VUE = vue;
+  $('#vue-accueil').style.display   = vue === 'accueil'   ? 'block' : 'none';
+  $('#vue-catalogue').style.display = vue === 'catalogue' ? 'block' : 'none';
+  $('#vue-showroom').style.display  = vue === 'showroom'  ? 'block' : 'none';
+  $('#outils').style.display        = vue === 'showroom'  ? 'none'  : 'block';
+}
+
 function allerAccueil(){
-  VUE = 'accueil'; MAISON_ACTIVE = ''; GENRE = ''; FAMILLE = ''; RECHERCHE = '';
+  MAISON_ACTIVE = ''; GENRE = ''; FAMILLE = ''; RECHERCHE = '';
   $('#q').value = '';
-  $('#vue-catalogue').style.display = 'none';
-  $('#vue-accueil').style.display = 'block';
+  montrer('accueil');
   rendreAccueil();
 }
 function rendreAccueil(){
@@ -626,7 +695,7 @@ function rendreAccueil(){
     <button class="maison-carte" data-maison="${esc(m.nom)}">
       <div class="maison-logo">
         ${m.logo
-          ? `<img src="${esc(m.logo)}" alt="${esc(m.nom)}" loading="lazy" onerror="this.replaceWith(document.createTextNode(''))">`
+          ? `<img src="${esc(m.logo)}" alt="${esc(m.nom)}" loading="lazy" onerror="this.remove()">`
           : `<span class="init">${esc(m.nom.slice(0,2).toUpperCase())}</span>`}
       </div>
       <div class="maison-nom">${esc(m.nom)}</div>
@@ -637,15 +706,10 @@ function rendreAccueil(){
   brancherAjouts($('#rubriques'));
 }
 
-/* ---------- vue catalogue ---------- */
 function ouvrirMaison(nom){
-  VUE = 'catalogue'; MAISON_ACTIVE = nom; GENRE = ''; FAMILLE = ''; RECHERCHE = ''; $('#q').value = '';
-  basculerCatalogue();
-}
-function basculerCatalogue(){
-  $('#vue-accueil').style.display = 'none';
-  $('#vue-catalogue').style.display = 'block';
-  $('#cat-titre').textContent = MAISON_ACTIVE || (RECHERCHE ? 'Résultats' : 'Tout le catalogue');
+  MAISON_ACTIVE = nom; GENRE = ''; FAMILLE = ''; RECHERCHE = ''; $('#q').value = '';
+  montrer('catalogue');
+  $('#cat-titre').textContent = nom;
   rendreCatalogue();
   window.scrollTo({ top: $('#vue-catalogue').offsetTop - 80, behavior:'smooth' });
 }
@@ -663,8 +727,9 @@ function listeFiltree(){
 
 function rendreChips(sel, valeurs, actif, poser){
   const box = $(sel);
+  // la famille est une description libre : on ne propose des filtres que si les valeurs sont courtes et répétées
   if (valeurs.length < 2){ box.innerHTML = ''; return; }
-  box.innerHTML = `<button class="chip${actif?'':' on'} " data-v="">Tout</button>`
+  box.innerHTML = `<button class="chip${actif?'':' on'}" data-v="">Tout</button>`
     + valeurs.map(v => `<button class="chip${actif===v?' on':''}" data-v="${esc(v)}">${esc(v)}</button>`).join('');
   box.querySelectorAll('.chip').forEach(b => b.onclick = () => { poser(b.dataset.v); rendreCatalogue(); });
 }
@@ -675,8 +740,10 @@ function rendreCatalogue(){
     if (RECHERCHE && !(p.nom+' '+p.maison+' '+p.famille).toLowerCase().includes(RECHERCHE)) return false;
     return true;
   });
-  rendreChips('#chips-famille', [...new Set(base.map(p => p.famille).filter(Boolean))], FAMILLE, v => FAMILLE = v);
-  rendreChips('#chips-genre',   [...new Set(base.map(p => p.genre).filter(Boolean))],   GENRE,   v => GENRE = v);
+  // familles courtes seulement (une description longue ne fait pas un filtre utile)
+  const familles = [...new Set(base.map(p => p.famille).filter(f => f && f.length <= 24))];
+  rendreChips('#chips-famille', familles, FAMILLE, v => FAMILLE = v);
+  rendreChips('#chips-genre', [...new Set(base.map(p => p.genre).filter(Boolean))], GENRE, v => GENRE = v);
 
   const liste = listeFiltree();
   $('#compte').textContent = liste.length ? liste.length + (liste.length > 1 ? ' parfums' : ' parfum') : '';
@@ -685,7 +752,7 @@ function rendreCatalogue(){
     $('#grille').innerHTML = `<div class="vide">
       <h3>Ce parfum n'est pas au catalogue pour le moment</h3>
       <p>Écrivez-nous sur WhatsApp : beaucoup de références se trouvent sur demande.</p>
-      <a class="btn-fin" href="${CONFIG.WA_NUMERO ? 'https://wa.me/'+CONFIG.WA_NUMERO : CONFIG.WA_SECOURS}" target="_blank" rel="noopener">Nous écrire sur WhatsApp</a>
+      <a class="btn-sombre" href="${CONFIG.WA_NUMERO ? 'https://wa.me/'+CONFIG.WA_NUMERO : CONFIG.WA_SECOURS}" target="_blank" rel="noopener">Nous écrire sur WhatsApp</a>
     </div>`;
     return;
   }
@@ -705,20 +772,71 @@ function rendreCatalogue(){
   brancherAjouts($('#grille'));
 }
 
-function redessiner(){ VUE === 'accueil' ? rendreAccueil() : rendreCatalogue(); }
+function redessiner(){
+  if (VUE === 'accueil') rendreAccueil();
+  else if (VUE === 'catalogue') rendreCatalogue();
+}
 
 $('#q').addEventListener('input', e => {
   RECHERCHE = e.target.value.toLowerCase().trim();
   if (RECHERCHE){
-    VUE = 'catalogue'; MAISON_ACTIVE = ''; GENRE = ''; FAMILLE = '';
-    $('#vue-accueil').style.display = 'none';
-    $('#vue-catalogue').style.display = 'block';
+    MAISON_ACTIVE = ''; GENRE = ''; FAMILLE = '';
+    montrer('catalogue');
     $('#cat-titre').textContent = 'Résultats';
     rendreCatalogue();
   } else if (!MAISON_ACTIVE){
     allerAccueil();
   }
 });
+
+/* ---------- page showroom ---------- */
+function rendreShowroom(){
+  const g = $('#galerie');
+  if (SHOWROOM.photos.length){
+    g.className = 'galerie';
+    g.innerHTML = SHOWROOM.photos.map((u,i) =>
+      `<figure><img src="${esc(u)}" alt="Showroom ${i+1}" loading="lazy" onerror="this.parentElement.remove()"></figure>`).join('');
+  } else if (!SHOWROOM.posts.length){
+    g.className = '';
+    g.innerHTML = '<div class="galerie-vide">Les photos du showroom arrivent bientôt.</div>';
+  } else {
+    g.className = ''; g.innerHTML = '';
+  }
+
+  const z = $('#insta-zone');
+  // un lien copié depuis l'application traîne souvent des paramètres de suivi,
+  // l'intégration veut le lien nu
+  const permalien = u => u.split('?')[0].replace(/\/?$/, '/');
+  let html = '';
+  if (SHOWROOM.posts.length){
+    html += '<div class="insta-embeds">' + SHOWROOM.posts.map(u =>
+      `<blockquote class="instagram-media" data-instgrm-permalink="${esc(permalien(u))}" data-instgrm-version="14"></blockquote>`).join('') + '</div>';
+  }
+  if (SHOWROOM.instagram){
+    html += `<a class="btn-sombre insta-lien" href="https://www.instagram.com/${esc(SHOWROOM.instagram)}/" target="_blank" rel="noopener">Voir le compte Instagram</a>`;
+  }
+  z.innerHTML = html;
+
+  if (SHOWROOM.posts.length){
+    if (!document.getElementById('insta-script')){
+      const s = document.createElement('script');
+      s.id = 'insta-script'; s.async = true; s.src = 'https://www.instagram.com/embed.js';
+      document.body.appendChild(s);
+    } else if (window.instgrm){
+      window.instgrm.Embeds.process();
+    }
+  }
+}
+function allerShowroom(e){
+  if (e) e.preventDefault();
+  montrer('showroom');
+  rendreShowroom();
+  window.scrollTo({ top: 0, behavior:'smooth' });
+}
+$('#nav-showroom').onclick = allerShowroom;
+$('#hero-showroom').onclick = allerShowroom;
+$('#pied-showroom').onclick = allerShowroom;
+$('#retour-showroom').onclick = () => allerAccueil();
 
 /* ---------- panier ---------- */
 function ajouter(id){
@@ -815,7 +933,7 @@ $('#cal-next').onclick = () => { calRef.setMonth(calRef.getMonth()+1); rendreCal
 
 function remplirCreneaux(){
   const box = $('#creneaux');
-  if (!RDV.date){ box.innerHTML = '<div class="detail" style="grid-column:1/-1">Choisissez d\'abord un jour.</div>'; return; }
+  if (!RDV.date){ box.innerHTML = '<div class="compte" style="grid-column:1/-1;margin:0">Choisissez d\'abord un jour.</div>'; return; }
   const auj = cle(new Date());
   const maintenant = new Date();
   let html = '';
@@ -839,7 +957,8 @@ function remplirCreneaux(){
 }
 
 /* ---------- page rendez-vous ---------- */
-function ouvrirRdv(){
+function ouvrirRdv(e){
+  if (e) e.preventDefault();
   fermer();
   $('#fiche').classList.remove('on');
   majRdv();
@@ -924,18 +1043,6 @@ $('#fermer-panier').onclick = fermer;
 $('#voile').onclick = () => { fermer(); $('#fiche').classList.remove('on'); };
 
 const FICHES = {
-  showroom: {
-    titre: 'Le showroom',
-    html: `
-      <h3>Un lieu privé</h3>
-      <p>Le showroom se trouve à Strasbourg. Il n'a pas de vitrine et ne reçoit que sur rendez-vous : l'adresse exacte est communiquée par WhatsApp une fois le créneau confirmé.</p>
-      <h3>Horaires</h3>
-      <p>Tous les jours, du lundi au dimanche, de 10h à 22h. Les créneaux se réservent au moins deux heures à l'avance.</p>
-      <h3>Comment ça se passe</h3>
-      <p>La visite est un accompagnement : on sent, on compare, on affine jusqu'à trouver le parfum qui vous va. Elle se conclut par l'achat d'au moins un parfum, ce n'est pas une simple séance d'essai.</p>
-      <h3>Réserver</h3>
-      <p>Ajoutez les parfums qui vous intéressent à votre sélection, puis cliquez sur « Prendre rendez-vous » en haut de la page.</p>`
-  },
   livraison: {
     titre: 'Livraison',
     html: `
