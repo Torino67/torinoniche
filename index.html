@@ -12,6 +12,7 @@
 :root{
   /* fond clair du site */
   --fond:#F2E8DB;
+  --or:#BF8013;
   --surface:#FBF5EC;
   --encre:#2A1D14;
   --encre-doux:rgba(42,29,20,.66);
@@ -40,13 +41,13 @@ img{display:block;max-width:100%}
 :focus-visible{outline:2px solid var(--terre);outline-offset:3px}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
-.ticker{background:var(--terre);color:#fff;font-size:13.5px;text-align:center;padding:9px 16px;min-height:38px;display:flex;align-items:center;justify-content:center}
+.ticker{background:var(--or);color:#231708;font-size:13.5px;text-align:center;padding:9px 16px;min-height:38px;display:flex;align-items:center;justify-content:center}
 .ticker span{transition:opacity .45s}
 
 header{position:sticky;top:0;z-index:90;background:rgba(242,232,219,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--trait-clair)}
 .bar{display:flex;align-items:center;gap:20px;height:68px}
 .mark{font-family:'Fraunces',serif;font-size:23px;letter-spacing:.02em;white-space:nowrap;cursor:pointer}
-.mark em{font-style:normal;color:var(--terre)}
+.mark em{font-style:normal;color:var(--or)}
 nav{margin-left:auto;display:flex;gap:10px;align-items:center}
 .nav-lien{color:var(--encre-doux);font-size:14.5px;padding:8px 4px;border-bottom:1px solid transparent}
 .nav-lien:hover{color:var(--encre);border-bottom-color:var(--terre)}
@@ -60,7 +61,7 @@ nav{margin-left:auto;display:flex;gap:10px;align-items:center}
 .hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(94deg,rgba(0,0,0,.22) 0 2px,transparent 2px 9px);opacity:.5;pointer-events:none}
 .hero .wrap{position:relative}
 .hero-grid{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:start}
-.filet{width:3px;background:linear-gradient(180deg,var(--terre-vive),transparent);border-radius:3px;align-self:stretch;min-height:140px}
+.filet{width:3px;background:linear-gradient(180deg,var(--or),transparent);border-radius:3px;align-self:stretch;min-height:140px}
 .hero h1{font-size:clamp(40px,7vw,74px);max-width:11ch}
 .hero p{margin-top:24px;max-width:50ch;color:var(--creme-doux);font-size:16.5px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
@@ -82,7 +83,7 @@ nav{margin-left:auto;display:flex;gap:10px;align-items:center}
 .bloc-code input::placeholder{color:rgba(42,29,20,.45)}
 .bloc-code button{border:1px solid var(--encre);color:var(--encre);padding:0 18px;border-radius:var(--r);font-size:14.5px;white-space:nowrap}
 .bloc-code button:hover{background:var(--encre);color:var(--surface)}
-.code-actif{margin-top:12px;font-size:13.5px;color:var(--encre);background:rgba(168,72,31,.10);border-left:2px solid var(--terre);padding:9px 13px;border-radius:3px}
+.code-actif{margin-top:12px;font-size:13.5px;color:var(--encre);background:rgba(191,128,19,.16);border-left:2px solid var(--terre);padding:9px 13px;border-radius:3px}
 .code-actif button{text-decoration:underline;font-size:13px;color:var(--encre-doux);margin-left:8px}
 
 .section{padding:44px 0 0}
@@ -118,10 +119,10 @@ nav{margin-left:auto;display:flex;gap:10px;align-items:center}
 /* cartes maisons, claires pour que les logos ressortent */
 .maisons{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));padding-top:4px}
 .maison-carte{background:var(--surface);border:1px solid var(--trait-clair);border-radius:var(--r);padding:22px 16px;text-align:center;color:var(--encre);transition:border-color .2s}
-.maison-carte:hover{border-color:var(--encre)}
+.maison-carte:hover{border-color:var(--or)}
 .maison-logo{height:62px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
 .maison-logo img{max-height:62px;max-width:100%;object-fit:contain}
-.maison-logo .init{font-family:'Fraunces',serif;font-size:30px;color:var(--terre);letter-spacing:.06em}
+.maison-logo .init{font-family:'Fraunces',serif;font-size:30px;color:var(--or);letter-spacing:.06em}
 .maison-nom{font-family:'Fraunces',serif;font-size:17px;line-height:1.2}
 .maison-nb{font-size:12.5px;color:var(--encre-doux);margin-top:5px}
 
@@ -191,7 +192,7 @@ nav{margin-left:auto;display:flex;gap:10px;align-items:center}
 .cgv{font-size:11.5px;color:var(--encre-doux);line-height:1.5;margin-bottom:14px}
 .valider{width:100%;background:var(--terre);color:#fff;padding:15px;border-radius:var(--r);font-size:15.5px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:10px}
 .valider:hover{background:var(--terre-vive)}
-.valider[disabled]{background:rgba(42,29,20,.12);color:var(--encre-doux);cursor:not-allowed}
+.valider[disabled]{background:rgba(42,29,20,.14);color:var(--encre-doux);cursor:not-allowed}
 
 /* fenêtres */
 .page,.fiche{position:fixed;inset:0;z-index:105;display:none;align-items:flex-start;justify-content:center;padding:36px 20px;overflow-y:auto;background:rgba(22,15,10,.55)}
@@ -204,7 +205,7 @@ nav{margin-left:auto;display:flex;gap:10px;align-items:center}
 .fiche-boite h2{font-size:27px;margin-bottom:18px}
 .fiche-boite h3{font-family:'Karla',sans-serif;font-size:14px;font-weight:700;color:var(--terre);margin:20px 0 7px}
 .fiche-boite p{font-size:15px;color:var(--encre-doux);margin-bottom:9px}
-.regle{font-size:13.5px;color:var(--encre);background:rgba(168,72,31,.10);border-radius:3px;padding:11px 13px;line-height:1.5}
+.regle{font-size:13.5px;color:var(--encre);background:rgba(168,72,31,.12);border-radius:3px;padding:11px 13px;line-height:1.5}
 .etape{margin:22px 0}
 .etape h3{font-family:'Karla',sans-serif;font-size:13px;font-weight:700;color:var(--terre);margin-bottom:10px}
 .etape input{width:100%;background:var(--fond);border:1px solid var(--trait-clair);color:var(--encre);padding:12px 13px;border-radius:var(--r);font-size:15px;font-family:inherit}
@@ -236,7 +237,7 @@ nav{margin-left:auto;display:flex;gap:10px;align-items:center}
 
 footer{background:var(--bois-nuit);color:var(--creme);padding:52px 0 26px;margin-top:70px}
 .pied{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:34px}
-.pied h4{font-family:'Karla',sans-serif;font-size:13px;font-weight:700;color:var(--terre-vive);margin-bottom:12px}
+.pied h4{font-family:'Karla',sans-serif;font-size:13px;font-weight:700;color:var(--or);margin-bottom:12px}
 .pied a,.pied p{display:block;font-size:14px;color:var(--creme-doux);margin-bottom:8px}
 .pied a:hover{color:var(--creme)}
 .pied-mark{font-family:'Fraunces',serif;font-size:22px;color:var(--creme);margin-bottom:10px}
