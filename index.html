@@ -13,6 +13,7 @@
   /* fond clair du site */
   --fond:#F2E8DB;
   --or:#BF8013;
+  --or-clair:#D9A544;
   --surface:#FBF5EC;
   --encre:#2A1D14;
   --encre-doux:rgba(42,29,20,.66);
@@ -25,9 +26,9 @@
   --creme-doux:rgba(243,230,216,.62);
   --trait:rgba(224,194,166,.18);
   --argile:#E0C2A6;
-  --terre:#A8481F;
-  --terre-vive:#C96A3C;
-  --rouge:#C0392B;
+  --terre:#6E1621;
+  --terre-vive:#8A2130;
+  --rouge:#A3242E;
   --r:4px;
   --max:1180px;
 }
@@ -51,13 +52,13 @@ header{position:sticky;top:0;z-index:90;background:rgba(242,232,219,.94);backdro
 nav{margin-left:auto;display:flex;gap:10px;align-items:center}
 .nav-lien{color:var(--encre-doux);font-size:14.5px;padding:8px 4px;border-bottom:1px solid transparent}
 .nav-lien:hover{color:var(--encre);border-bottom-color:var(--terre)}
-.nav-rdv{border:1px solid var(--encre);color:var(--encre);padding:9px 17px;border-radius:var(--r);font-size:14.5px}
-.nav-rdv:hover{background:var(--encre);color:var(--surface)}
+.nav-rdv{border:1px solid var(--terre);color:var(--terre);padding:9px 17px;border-radius:var(--r);font-size:14.5px}
+.nav-rdv:hover{background:var(--terre);color:#fff}
 .panier-btn{display:flex;align-items:center;gap:9px;background:var(--terre);color:#fff;padding:10px 18px;border-radius:var(--r);font-size:14.5px;font-weight:500}
 .panier-btn:hover{background:var(--terre-vive)}
 .pastille{background:#fff;color:var(--terre);border-radius:20px;min-width:20px;height:20px;font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;padding:0 5px}
 
-.hero{position:relative;padding:70px 0 62px;background:linear-gradient(180deg,rgba(168,72,31,.14),transparent 62%),var(--bois-nuit);color:var(--creme);overflow:hidden}
+.hero{position:relative;padding:70px 0 62px;background:linear-gradient(168deg,#7A1A26 0%,#4A1019 58%,#2B0B11 100%);color:var(--creme);overflow:hidden}
 .hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(94deg,rgba(0,0,0,.22) 0 2px,transparent 2px 9px);opacity:.5;pointer-events:none}
 .hero .wrap{position:relative}
 .hero-grid{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:start}
@@ -98,12 +99,12 @@ nav{margin-left:auto;display:flex;gap:10px;align-items:center}
 .visuel img{width:100%;height:100%;object-fit:cover}
 .mono{font-family:'Fraunces',serif;font-size:52px;color:rgba(224,194,166,.22)}
 .etiq{position:absolute;top:10px;left:10px;color:#fff;font-size:10.5px;font-weight:700;padding:4px 9px;border-radius:3px;letter-spacing:.04em}
-.etiq.bs{background:var(--rouge)}
+.etiq.bs{background:var(--or);color:#231708}
 .etiq.nv{background:var(--terre)}
 .etiq.dp{background:#0B0704;border:1px solid var(--trait)}
 .epuise{position:absolute;inset:0;background:rgba(22,15,10,.74);display:flex;align-items:center;justify-content:center;color:var(--argile);font-size:14px}
 .infos{padding:15px 15px 17px;display:flex;flex-direction:column;flex:1;gap:5px}
-.maison{font-size:12.5px;color:var(--terre-vive);letter-spacing:.04em}
+.maison{font-size:12.5px;color:var(--or-clair);letter-spacing:.04em}
 .titre{font-family:'Fraunces',serif;font-size:19px;line-height:1.25}
 .detail{font-size:13px;color:var(--creme-doux)}
 .blister{font-size:11.5px;color:var(--argile);border:1px solid var(--trait);border-radius:20px;padding:2px 9px;align-self:flex-start;margin-top:3px}
@@ -205,7 +206,7 @@ nav{margin-left:auto;display:flex;gap:10px;align-items:center}
 .fiche-boite h2{font-size:27px;margin-bottom:18px}
 .fiche-boite h3{font-family:'Karla',sans-serif;font-size:14px;font-weight:700;color:var(--terre);margin:20px 0 7px}
 .fiche-boite p{font-size:15px;color:var(--encre-doux);margin-bottom:9px}
-.regle{font-size:13.5px;color:var(--encre);background:rgba(168,72,31,.12);border-radius:3px;padding:11px 13px;line-height:1.5}
+.regle{font-size:13.5px;color:var(--encre);background:rgba(110,22,33,.10);border-radius:3px;padding:11px 13px;line-height:1.5}
 .etape{margin:22px 0}
 .etape h3{font-family:'Karla',sans-serif;font-size:13px;font-weight:700;color:var(--terre);margin-bottom:10px}
 .etape input{width:100%;background:var(--fond);border:1px solid var(--trait-clair);color:var(--encre);padding:12px 13px;border-radius:var(--r);font-size:15px;font-family:inherit}
