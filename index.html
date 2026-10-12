@@ -60,6 +60,11 @@ nav{margin-left:auto;display:flex;gap:10px;align-items:center}
 .nav-btn:hover{border-color:var(--or);color:var(--or-clair)}
 .nav-btn svg{opacity:.75}
 .court{display:none}
+.sous-barre{display:none}
+.sous-barre button{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;color:var(--creme-doux);padding:11px 4px}
+.sous-barre button:hover{color:var(--or-clair)}
+.sous-barre button svg{opacity:.7}
+.sb-sep{width:1px;height:16px;background:var(--trait-fort)}
 .panier-btn{display:flex;align-items:center;gap:8px;background:linear-gradient(180deg,var(--or-clair),var(--or));color:var(--nuit);padding:10px 14px;border-radius:var(--r);font-weight:600}
 .panier-btn:hover{filter:brightness(1.06)}
 .pastille{background:var(--nuit);color:var(--or-clair);border-radius:20px;min-width:20px;height:20px;font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;padding:0 5px}
@@ -133,12 +138,12 @@ nav{margin-left:auto;display:flex;gap:10px;align-items:center}
 .ajout[disabled]{background:rgba(46,28,21,.12);color:var(--encre-doux);cursor:not-allowed}
 
 /* ---------- maisons et familles ---------- */
-.maisons{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(174px,1fr))}
+.maisons{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(196px,1fr))}
 .maison-carte{background:var(--ivoire);border-radius:var(--r);padding:22px 16px;text-align:center;color:var(--encre);border:1px solid transparent;transition:border-color .2s}
 .maison-carte:hover{border-color:var(--or)}
-.maison-logo{height:58px;display:flex;align-items:center;justify-content:center;margin-bottom:13px}
-.maison-logo img{max-height:58px;max-width:100%;object-fit:contain}
-.maison-logo .init{font-family:'Fraunces',serif;font-size:28px;color:var(--or-sombre);letter-spacing:.08em}
+.maison-logo{height:94px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;padding:0 4px}
+.maison-logo img{max-height:94px;width:100%;object-fit:contain}
+.maison-logo .init{font-family:'Fraunces',serif;font-size:40px;color:var(--or-sombre);letter-spacing:.08em}
 .maison-nom{font-family:'Fraunces',serif;font-size:16.5px;line-height:1.2}
 .maison-nb{font-size:12px;color:var(--encre-doux);margin-top:4px}
 
@@ -276,6 +281,7 @@ footer{background:var(--nuit);border-top:1px solid var(--trait);padding:56px 0 2
   .bar{gap:8px;height:62px}
   .mark{font-size:17px;letter-spacing:.1em}
   .nav-btn{display:none}
+  .sous-barre{display:flex;align-items:center;justify-content:center;gap:22px;border-top:1px solid var(--trait);padding:0 20px}
   .panier-btn{padding:10px 13px;gap:7px}
   nav{gap:8px}
   .hero .wrap{padding:54px 24px 50px}
@@ -286,8 +292,8 @@ footer{background:var(--nuit);border-top:1px solid var(--trait);padding:56px 0 2
   .grille{grid-template-columns:repeat(2,1fr)}
   .maisons{grid-template-columns:repeat(2,1fr);gap:12px}
   .familles{grid-template-columns:repeat(2,1fr);gap:10px}
-  .maison-logo{height:46px}
-  .maison-logo img{max-height:46px}
+  .maison-logo{height:74px}
+  .maison-logo img{max-height:74px}
   .titre{font-size:16.5px}
   .infos{padding:14px 13px 16px}
   .pied{grid-template-columns:1fr;gap:26px}
@@ -319,6 +325,17 @@ footer{background:var(--nuit);border-top:1px solid var(--trait);padding:56px 0 2
         <span class="pastille" id="pastille">0</span>
       </button>
     </nav>
+  </div>
+  <div class="sous-barre">
+    <button id="nav-showroom-m">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+      Notre showroom
+    </button>
+    <span class="sb-sep"></span>
+    <button data-ouvrir-rdv>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>
+      Rendez-vous
+    </button>
   </div>
 </header>
 
@@ -397,10 +414,11 @@ footer{background:var(--nuit);border-top:1px solid var(--trait);padding:56px 0 2
         <div class="sr-bloc">
           <h3>Sur rendez-vous</h3>
           <p>Tous les jours, du lundi au dimanche, de 10h à 22h. Les créneaux se réservent au moins deux heures à l'avance.</p>
-          <p>Chaque séance est accompagnée par un professionnel du parfum et se termine par le choix de votre flacon.</p>
+          <p>La séance coûte 30 €, intégralement déduits si vous repartez avec un parfum. Vous n'êtes donc jamais obligé d'acheter.</p>
         </div>
         <div class="sr-bloc">
           <h3>Ce qui est prévu</h3>
+          <p>Un accompagnement par un professionnel, le temps de sentir et de comparer sans se presser.</p>
           <p>Un échantillon offert pour l'achat d'un parfum, selon les disponibilités.</p>
           <p>Le catalogue complet est disponible sur place, y compris les pièces qui n'apparaissent pas en ligne.</p>
         </div>
@@ -474,7 +492,8 @@ footer{background:var(--nuit);border-top:1px solid var(--trait);padding:56px 0 2
       </div>
       <button class="fermer" id="fermer-rdv" aria-label="Fermer">&times;</button>
     </div>
-    <div class="regle">Le rendez-vous est un moment d'accompagnement avec un professionnel du parfum. On prend le temps de sentir, de comparer, de comprendre les familles et ce qui vous correspond vraiment. La séance se termine par le choix de votre parfum, c'est ce qui en fait une vraie expérience plutôt qu'un passage en boutique.</div>
+    <div class="regle"><b>La séance coûte 30 €, et ils sont déduits de votre achat.</b><br>
+      C'est un accompagnement avec un professionnel du parfum : on prend le temps de sentir, de comparer, de comprendre les familles et ce qui vous correspond. Si vous repartez avec un flacon, les 30 € viennent en déduction de son prix. Si rien ne vous convainc ce jour-là, vous ne repartez avec rien et seule la séance reste due.</div>
     <div class="etape">
       <h3>1. Vos parfums, si vous en avez repéré</h3>
       <div id="rdv-selection"></div>
@@ -545,7 +564,8 @@ const MARQUES_SHOPPER = ['hermes','hermès','ysl','yves saint laurent','louis vu
 const MSG_BANDEAU = [
   'Showroom privé à Strasbourg, sur rendez-vous',
   'Échantillons offerts pour l\'achat d\'un parfum',
-  'Catalogue mis à jour chaque semaine'
+  'Catalogue mis à jour chaque semaine',
+  'Séance découverte 30 €, déduits de votre achat'
 ];
 const RUBRIQUES = [
   { cle:'star',      titre:'Best-sellers',           etiq:'Best-seller',    classe:'bs' },
@@ -734,7 +754,7 @@ function carte(p, etiq, classe){
           <b>${aff.prix > 0 ? euro(aff.prix) : 'Prix sur demande'}</b>
         </div>
         ${p.famille ? `<div class="famille">${esc(p.famille)}</div>` : ''}
-        <button class="ajout" data-id="${p.id}" ${p.dispo ? '' : 'disabled'}>${p.dispo ? 'Ajouter' : 'Indisponible'}</button>
+        <button class="ajout" data-id="${p.id}" ${p.dispo ? '' : 'disabled'}>${p.dispo ? 'Suggérer' : 'Indisponible'}</button>
       </div>
     </div>
   </article>`;
@@ -935,6 +955,7 @@ function allerShowroom(e){
   window.scrollTo({ top: 0, behavior:'smooth' });
 }
 $('#nav-showroom').onclick = allerShowroom;
+$('#nav-showroom-m').onclick = allerShowroom;
 $('#pied-showroom').onclick = allerShowroom;
 $('#retour-showroom').onclick = () => allerAccueil();
 
@@ -1119,7 +1140,7 @@ function construireMessage(pourRdv){
     m += articles
       ? "Parfums retenus :\n" + articles + "\n\nTotal : " + euro(total) + mentionCode + "\n\n"
       : "Je n'ai pas encore choisi de parfum, je verrai sur place.\n\n";
-    return m + "J'ai bien compris qu'il s'agit d'un accompagnement qui se conclut par le choix d'un parfum. J'attends votre confirmation.";
+    return m + "J'ai bien compris que la séance est facturée 30 €, déduits de mon achat si je repars avec un parfum. J'attends votre confirmation.";
   }
   return "Bonjour, j'aimerais passer commande :\n\n" + articles
     + "\n\nTotal : " + euro(total) + mentionCode + "\nMode : livraison";
@@ -1164,7 +1185,8 @@ const FICHES = {
       <h3>Commande</h3>
       <p>La sélection faite sur le catalogue constitue une demande. La commande est confirmée dans la conversation WhatsApp, après validation de la disponibilité et du mode d'envoi.</p>
       <h3>Rendez-vous au showroom</h3>
-      <p>Le rendez-vous est une prestation d'accompagnement personnalisé, assurée par un professionnel du parfum, qui se conclut par le choix d'un flacon. Un créneau non honoré et non annulé au moins deux heures à l'avance peut être refusé lors d'une prochaine demande.</p>
+      <p>Le rendez-vous est une prestation d'accompagnement personnalisé, assurée par un professionnel du parfum, facturée 30 €. En cas d'achat d'un parfum lors de la séance, ces 30 € sont déduits du montant de l'achat. En l'absence d'achat, la prestation reste due.</p>
+      <p>Un créneau non honoré et non annulé au moins deux heures à l'avance peut être refusé lors d'une prochaine demande.</p>
       <h3>Produits</h3>
       <p>Les parfums sont authentiques et vendus scellés, sauf mention contraire. Pour des raisons d'hygiène, un flacon ouvert n'est ni repris ni échangé.</p>
       <h3>Marques</h3>
