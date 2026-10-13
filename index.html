@@ -233,7 +233,10 @@ nav{margin-left:auto;display:flex;gap:10px;align-items:center}
 .fiche-boite h2{font-size:27px;margin-bottom:18px}
 .fiche-boite h3{font-family:'Karla',sans-serif;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--or);margin:22px 0 7px}
 .fiche-boite p{font-size:15px;color:var(--creme-doux);margin-bottom:9px}
-.regle{font-size:13.5px;color:var(--or-clair);background:rgba(217,179,108,.08);border:1px solid var(--trait);border-radius:var(--r);padding:13px 15px;line-height:1.55}
+.regle{font-size:13.5px;color:var(--or-clair);background:rgba(217,179,108,.08);border:1px solid var(--trait);border-radius:var(--r);padding:16px 17px;line-height:1.6}
+.regle b{display:block;font-family:'Fraunces',serif;font-weight:400;font-size:17px;color:var(--or-clair);margin-bottom:8px}
+.regle p{margin-bottom:9px}
+.regle p:last-child{margin-bottom:0}
 .etape{margin:22px 0}
 .etape h3{font-family:'Karla',sans-serif;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--or);margin-bottom:11px}
 .etape input{width:100%;background:rgba(247,239,228,.06);border:1px solid var(--trait);color:var(--creme);padding:13px 15px;border-radius:var(--r);font-size:15px;font-family:inherit}
@@ -414,12 +417,12 @@ footer{background:var(--nuit);border-top:1px solid var(--trait);padding:56px 0 2
         <div class="sr-bloc">
           <h3>Sur rendez-vous</h3>
           <p>Tous les jours, du lundi au dimanche, de 10h à 22h. Les créneaux se réservent au moins deux heures à l'avance.</p>
-          <p>La séance coûte 30 €, intégralement déduits si vous repartez avec un parfum. Vous n'êtes donc jamais obligé d'acheter.</p>
+          <p>La séance est à 30 €, avec deux échantillons à emporter. Si vous choisissez un parfum, les 30 € sont déduits de son prix.</p>
         </div>
         <div class="sr-bloc">
           <h3>Ce qui est prévu</h3>
-          <p>Un accompagnement par un professionnel, le temps de sentir et de comparer sans se presser.</p>
-          <p>Deux échantillons offerts pour l'achat d'un parfum, selon les disponibilités.</p>
+          <p>Le temps de sentir et de comparer, guidé par un professionnel.</p>
+          <p>Deux échantillons à emporter à la fin de la séance, selon les disponibilités.</p>
           <p>Le catalogue complet est disponible sur place, y compris les pièces qui n'apparaissent pas en ligne.</p>
         </div>
       </div>
@@ -492,8 +495,11 @@ footer{background:var(--nuit);border-top:1px solid var(--trait);padding:56px 0 2
       </div>
       <button class="fermer" id="fermer-rdv" aria-label="Fermer">&times;</button>
     </div>
-    <div class="regle"><b>La séance coûte 30 €, et ils sont déduits de votre achat.</b><br>
-      C'est un accompagnement avec un professionnel du parfum : on prend le temps de sentir, de comparer, de comprendre les familles et ce qui vous correspond. Si vous repartez avec un flacon, les 30 € viennent en déduction de son prix. Si rien ne vous convainc ce jour-là, vous ne repartez avec rien et seule la séance reste due.</div>
+    <div class="regle">
+      <b>Une séance d'accompagnement</b>
+      <p>Le rendez-vous se passe dans un salon privé, sans passage ni vitrine. Un professionnel vous guide : on part de ce que vous aimez déjà sentir, on explore les familles, on compare, et on laisse aux parfums le temps de s'installer sur la peau avant de trancher. Rien n'est précipité.</p>
+      <p>La séance est à 30 €, avec deux échantillons à emporter. Si vous choisissez un parfum, les 30 € sont déduits de son prix.</p>
+    </div>
     <div class="etape">
       <h3>1. Vos parfums, si vous en avez repéré</h3>
       <div id="rdv-selection"></div>
@@ -565,7 +571,7 @@ const MSG_BANDEAU = [
   'Showroom privé à Strasbourg, sur rendez-vous',
   '2 échantillons offerts pour l\'achat d\'un parfum',
   'Catalogue mis à jour chaque semaine',
-  'Séance découverte 30 €, déduits de votre achat'
+  'Séance à 30 €, déduits si vous choisissez un parfum'
 ];
 const RUBRIQUES = [
   { cle:'star',      titre:'Best-sellers',           etiq:'Best-seller',    classe:'bs' },
@@ -1140,7 +1146,7 @@ function construireMessage(pourRdv){
     m += articles
       ? "Parfums retenus :\n" + articles + "\n\nTotal : " + euro(total) + mentionCode + "\n\n"
       : "Je n'ai pas encore choisi de parfum, je verrai sur place.\n\n";
-    return m + "J'ai bien compris que la séance est facturée 30 €, déduits de mon achat si je repars avec un parfum. J'attends votre confirmation.";
+    return m + "J'ai bien noté : 30 € pour la séance, deux échantillons, et les 30 € déduits si je choisis un parfum. J'attends votre confirmation.";
   }
   return "Bonjour, j'aimerais passer commande :\n\n" + articles
     + "\n\nTotal : " + euro(total) + mentionCode + "\nMode : livraison";
@@ -1185,7 +1191,7 @@ const FICHES = {
       <h3>Commande</h3>
       <p>La sélection faite sur le catalogue constitue une demande. La commande est confirmée dans la conversation WhatsApp, après validation de la disponibilité et du mode d'envoi.</p>
       <h3>Rendez-vous au showroom</h3>
-      <p>Le rendez-vous est une prestation d'accompagnement personnalisé, assurée par un professionnel du parfum, facturée 30 €. En cas d'achat d'un parfum lors de la séance, ces 30 € sont déduits du montant de l'achat. En l'absence d'achat, la prestation reste due.</p>
+      <p>Le rendez-vous est une prestation d'accompagnement personnalisé assurée par un professionnel du parfum, d'un montant de 30 €. Deux échantillons sont remis à l'issue de chaque séance, qu'il y ait achat ou non. En cas d'achat d'un parfum pendant la séance, les 30 € sont déduits du montant réglé.</p>
       <p>Un créneau non honoré et non annulé au moins deux heures à l'avance peut être refusé lors d'une prochaine demande.</p>
       <h3>Produits</h3>
       <p>Les parfums sont authentiques et vendus scellés, sauf mention contraire. Pour des raisons d'hygiène, un flacon ouvert n'est ni repris ni échangé.</p>
